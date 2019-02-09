@@ -1,0 +1,52 @@
+$namespace: '.header';
+
+#{$namespace} {
+  display: flex;
+  padding: $padding 0;
+  font-size: $font-big-size;
+
+  a {
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+#{$namespace}--icon {
+  height: 40px;
+  width: 40px;
+  background-image: image_url('icons/dorm.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#{$namespace}--title {
+  width: 40%;
+  padding-top: floor($padding * 2 / 3);
+  padding-left: $padding;
+}
+
+#{$namespace}--sign-container {
+  width: calc(100% - 40% - 40px);
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+
+#{$namespace}--sign-up {
+  display: block;
+  padding: floor($padding * 2 / 3) $padding;
+  border-radius: 30px;
+
+  &:hover {
+    opacity: .8;
+    background-color: $warm-grey;
+  }
+}

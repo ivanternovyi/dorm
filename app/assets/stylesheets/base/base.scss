@@ -3,6 +3,7 @@ body {
   background-color: $main-grey;
   min-height: 100%;
   padding-top: 0;
+  font-size: $font-regular-size;
 }
 
 html {
@@ -60,4 +61,5 @@ html {
 
 .wrapper--footer {
   flex: none;
+  background-color: $dark-grey;
 }

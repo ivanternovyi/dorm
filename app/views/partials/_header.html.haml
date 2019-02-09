@@ -1,1 +1,10 @@
-= "header"
+.header
+  = link_to root_path do
+    .header--icon
+  .header--title
+    = link_to "Enter Dorm",root_path
+  .header--sign-container
+    = link_to new_student_session_path do
+      .header--sign-up= "Sign in"
+    = link_to new_student_registration_path do
+      .header--sign-up= "Sign up"

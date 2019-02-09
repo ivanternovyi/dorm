@@ -1,12 +1,8 @@
 @import 'bootstrap';
-
-// Settings
 @import 'settings/colors';
 @import 'settings/metrics';
 @import 'settings/fonts';
-
-// Tools
 @import 'tools/mixins';
-
-// Base
 @import 'base/base';
+@import 'components/header';
+@import 'components/footer';
