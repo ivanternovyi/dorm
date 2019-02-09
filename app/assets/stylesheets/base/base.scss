@@ -60,6 +60,7 @@ html {
 }
 
 .wrapper--footer {
+  margin-top: $margin * 2;
   flex: none;
   background-color: $dark-grey;
 }

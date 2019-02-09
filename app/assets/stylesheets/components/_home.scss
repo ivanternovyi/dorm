@@ -1,0 +1,17 @@
+$namespace: '.home';
+
+#{$namespace}--container {
+  height: 85vh;
+  background-image: image_url('dorm-room.jpg');
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+#{$namespace}--text {
+  position: relative;
+  left: 5%;
+  top: 4%;
+  font-size: $font-xx-big-size;
+  font-weight: $font-weight-semi-bold;
+}
