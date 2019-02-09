@@ -8,4 +8,17 @@
     = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,600,600i,700,700i,800,800i'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    .wrapper
+      .wrapper--header
+        .container.-header
+          .row
+            .col-md-12
+              = render 'partials/header'
+      .wrapper--content
+        .container
+          = yield
+      .wrapper--footer
+        .container.-footer
+          .row
+            .col-md-12
+              = render 'partials/footer'
