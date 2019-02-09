@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require init
+//= require lib/ui_component
+//= require components/test_component
+//= require jquery
