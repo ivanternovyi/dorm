@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require init
 //= require lib/ui_component
-//= require jquery
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
