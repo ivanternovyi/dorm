@@ -15,5 +15,4 @@
 //= require turbolinks
 //= require init
 //= require lib/ui_component
-//= require components/test_component
 //= require jquery
