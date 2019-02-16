@@ -1,8 +1,9 @@
-.text-center Wanna upload more?
+%span.cursor-pointer.js-wanna-upload Wanna upload more?
 
-= form_tag(upload_csv_admins_path, multipart: true) do
-  = file_field_tag 'students_csv'
-  = submit_tag
+.mt-2.hidden.js-wanna-upload-form
+  = form_tag(upload_csv_admins_path, multipart: true) do
+    = file_field_tag 'students_csv'
+    = submit_tag 'Submit', class: 'js-submit-upload-csv'
 
 - if @students.present?
   %table.table

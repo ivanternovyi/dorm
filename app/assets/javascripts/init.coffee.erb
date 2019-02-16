@@ -1,6 +1,7 @@
 window.App ||= {}
 
 App.init = ->
+  new App.UploadCsv
 
 $(document).on 'turbolinks:load', ->
   App.init()
