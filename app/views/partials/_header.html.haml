@@ -7,6 +7,9 @@
     - if current_student
       = link_to destroy_student_session_path, method: :delete do
         .header--sign-up= "Sign out"
+    - elsif current_admin
+      = link_to destroy_admin_session_path, method: :delete do
+        .header--sign-up= "Sign out"
     - else
       = link_to new_student_session_path do
         .header--sign-up= "Log in"
