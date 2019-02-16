@@ -25,6 +25,13 @@ $namespace: '.header';
   width: 40%;
   padding-top: floor($padding * 2 / 3);
   padding-left: $padding;
+  display: flex;
+
+  .-role {
+    margin-left: $margin;
+    font-weight: $font-weight-semi-bold;
+    color: $light-grey;
+  }
 }
 
 #{$namespace}--sign-container {
