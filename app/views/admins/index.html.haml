@@ -1,1 +1,18 @@
-%h1 Hello Admin
+- if @students.present?
+  %table.table
+    %thead
+      %tr
+        %th{ scope: 'col' } #
+        %th{ scope: 'col' } Email
+        %th{ scope: 'col' } created_at
+        %th{ scope: 'col' } Remove
+    %tbody
+      - @students.each do |student|
+        %tr
+          %td{ scope: 'row' }= student.id
+          %td{ scope: 'row' }= student.email
+          %td{ scope: 'row' }= student.created_at
+          %td{ scope: 'row' }
+            = link_to "Remove", student_path(student), method: :delete, data: { confirm: "Sure?" }
+- else
+  %h1.mt-5.text-center No students
