@@ -5,3 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+puts "Deleting students"
+Student.destroy_all
+puts "Done: Deleting students"
+
+puts "Deleting admins"
+Admin.destroy_all
+puts "Done: Deleting admins"
+
+puts "Adding new students"
+(1..25).to_a.each do |digit|
+  Student.create(email: "student#{digit}@mail.com",
+                 password: "12345678")
+end
+puts "Done: Adding new students"
+
+puts "Adding admin"
+Admin.create(email: "admin@mail.com", password: "12345678")
+puts "Done: Adding admin"
