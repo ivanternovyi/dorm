@@ -31,6 +31,10 @@ $namespace: '.header';
     margin-left: $margin;
     font-weight: $font-weight-semi-bold;
     color: $light-grey;
+
+    &:hover {
+      opacity: .7;
+    }
   }
 }
 
