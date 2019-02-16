@@ -22,7 +22,7 @@ class StudentsController < ApplicationController
 
   def destroy
     @student.destroy
-    redirect_to :back, fallback_location: root_path
+    redirect_back(fallback_location: root_path)
   end
 
   private

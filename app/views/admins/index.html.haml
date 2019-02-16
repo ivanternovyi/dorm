@@ -1,3 +1,9 @@
+.text-center Wanna upload more?
+
+= form_tag(upload_csv_admins_path, multipart: true) do
+  = file_field_tag 'students_csv'
+  = submit_tag
+
 - if @students.present?
   %table.table
     %thead

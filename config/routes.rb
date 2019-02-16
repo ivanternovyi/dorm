@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  resources :admins, only: :index
+  resources :admins, only: :index do
+    collection do
+      post :upload_csv
+    end
+  end
 
   resources :students
 end
