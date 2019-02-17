@@ -26,6 +26,12 @@ class StudentsController < ApplicationController
   end
 
   def update
+    @student.assign_attributes(student_params)
+    if @student.save
+      redirect_to @student
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -37,5 +43,9 @@ class StudentsController < ApplicationController
 
   def find_student
     @student ||= Student.find(params[:id])
+  end
+
+  def student_params
+    params.require(:student).permit(:first_name, :last_name, :email, :student_id, :avatar)
   end
 end

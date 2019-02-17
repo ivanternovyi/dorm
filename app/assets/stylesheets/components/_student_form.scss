@@ -1,0 +1,14 @@
+$namespace: '.student-form';
+
+#{$namespace} {
+  text-align: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  
+  form {
+    .row {
+        margin-left: 0;
+    }
+  }
+}

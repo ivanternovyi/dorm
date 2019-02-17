@@ -37,6 +37,8 @@ gem 'bootstrap', '~> 4.2.1'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem 'simple_form'
+gem "rmagick", "~> 2.13.1"
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

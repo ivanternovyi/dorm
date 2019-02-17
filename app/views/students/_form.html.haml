@@ -1,0 +1,14 @@
+.student-form
+  = simple_form_for(student) do |f|
+    = f.error_notification
+    = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+    .form-inputs
+      = f.input :first_name
+      = f.input :last_name
+      = f.input :email
+      = f.input :student_id, label: "Student ID", placeholder: "BK №11502598"
+      = f.input :avatar, as: :file, multipart: true
+
+    .form-actions.text-center
+      = f.submit "Update", class: 'btn btn-primary'
