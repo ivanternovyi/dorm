@@ -21,5 +21,6 @@
           %td{ scope: 'row' }= student.created_at
           %td{ scope: 'row' }
             = link_to "Remove", student_path(student), method: :delete, data: { confirm: "Sure?" }
+  = will_paginate @students
 - else
   %h1.mt-5.text-center No students

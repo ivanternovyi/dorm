@@ -11,6 +11,6 @@
           .-info-data= "Email: #{student.email} "
           .-info-data= "Student ID: #{student.student_id}"
           .-info-data= "Dorm ##{student.dorm_number}"
-
+  = will_paginate @students
 - else
   %h1 No students found
