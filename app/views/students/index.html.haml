@@ -1,1 +1,16 @@
-%h1 Index students
+- if @students.present?
+  .student-list
+    - @students.each do |student|
+      .student-list--item
+        .student-list--item-header
+          .-image
+          .-name
+            .-name-item= "First name: #{student.first_name}"
+            .-name-item= "Last name: #{student.last_name}"
+        .student-list--item-footer
+          .-info-data= "Email: #{student.email} "
+          .-info-data= "Student ID: #{student.student_id}"
+          .-info-data= "Dorm #3"
+
+- else
+  %h1 No students found
