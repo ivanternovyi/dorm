@@ -7,10 +7,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  version :thumb do
-    process resize_to_fit: [50, 50]
-  end
-
   def extension_whitelist
     %w(jpg jpeg png)
   end

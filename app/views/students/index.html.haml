@@ -3,7 +3,7 @@
     - @students.each do |student|
       .student-list--item
         .student-list--item-header
-          .-image
+          .-image{ style: student.avatar_url ? "background-image: url(#{student.avatar_url})" : '' }
           .-name
             .-name-item= "First name: #{student.first_name}"
             .-name-item= "Last name: #{student.last_name}"
