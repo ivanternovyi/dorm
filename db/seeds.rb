@@ -17,8 +17,12 @@ puts "Done: Deleting admins"
 
 puts "Adding new students"
 (1..25).to_a.each do |digit|
-  Student.create(email: "student#{digit}@mail.com",
-                 password: "12345678")
+  Student.create(first_name: "Denys",
+                 last_name: "Lomosko",
+                 email: "student#{digit}@mail.com",
+                 password: "12345678",
+                 student_id: "BK №124662#{digit}",
+                 dorm_number: (digit % 6))
 end
 puts "Done: Adding new students"
 

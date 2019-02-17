@@ -10,7 +10,7 @@
         .student-list--item-footer
           .-info-data= "Email: #{student.email} "
           .-info-data= "Student ID: #{student.student_id}"
-          .-info-data= "Dorm #3"
+          .-info-data= "Dorm ##{student.dorm_number}"
 
 - else
   %h1 No students found
