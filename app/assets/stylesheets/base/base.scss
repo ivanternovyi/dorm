@@ -64,3 +64,14 @@ html {
   flex: none;
   background-color: $dark-grey;
 }
+
+.pagination {
+  display: flex;
+  list-style: none;
+  border-radius: 0.25rem;
+  justify-content: center;
+
+  a, em, span {
+    padding-left: floor($padding / 3);
+  }
+}
