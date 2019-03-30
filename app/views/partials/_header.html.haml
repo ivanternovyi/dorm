@@ -5,7 +5,7 @@
     = link_to "Enter Dorm",root_path
     - if current_user
       .-role
-        = link_to "as #{current_user.class}", admins_path
+        = link_to "as #{current_user.class}", current_user_path
   .header--sign-container
     - if current_student
       = link_to destroy_student_session_path, method: :delete do

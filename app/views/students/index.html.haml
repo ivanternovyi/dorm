@@ -1,7 +1,7 @@
 - if @students.present?
   .student-list
     - @students.each do |student|
-      .student-list--item
+      = link_to student_path(student), class: 'student-list--item' do
         .student-list--item-header
           .-image{ style: student.avatar_url ? "background-image: url(#{student.avatar_url})" : '' }
           .-name

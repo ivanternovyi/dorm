@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :students, only: %i[index edit update destroy]
+  resources :students, only: %i[index show edit update destroy]
+  resources :managers, only: %i[show edit update destroy]
 end
