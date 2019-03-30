@@ -1,1 +1,9 @@
-%h1 #Show manager
+.student
+  .student--photo-container
+    .student--photo{ style: @manager.avatar_url ? "background-image: url(#{@manager.avatar_url})" : '' }
+  .student--data-container
+    .student--data-info
+      .field_name= 'Email: '
+      = @manager.email
+    .student--data-info
+      = link_to 'Edit profile', edit_manager_path(@manager), class: 'btn btn-primary'

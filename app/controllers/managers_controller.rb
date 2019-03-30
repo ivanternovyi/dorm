@@ -29,6 +29,6 @@ class ManagersController < ApplicationController
   end
 
   def manager_params
-    params.require(:manager).permit(:email, :student_id)
+    params.require(:manager).permit(:email, :avatar)
   end
 end

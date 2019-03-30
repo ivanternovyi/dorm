@@ -3,4 +3,6 @@ class Manager < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
+
+  mount_uploader :avatar, AvatarUploader
 end
