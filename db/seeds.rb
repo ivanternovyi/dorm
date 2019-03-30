@@ -11,6 +11,10 @@ puts "Deleting students"
 Student.destroy_all
 puts "Done: Deleting students"
 
+puts "Deleting managers"
+Student.destroy_all
+puts "Done: Deleting managers"
+
 puts "Deleting admins"
 Admin.destroy_all
 puts "Done: Deleting admins"
@@ -25,6 +29,13 @@ puts "Adding new students"
                  dorm_number: (digit % 6))
 end
 puts "Done: Adding new students"
+
+puts "Adding new managers"
+(1..25).to_a.each do |digit|
+  Manager.create(email: "manager#{digit}@mail.com",
+                 password: "12345678")
+end
+puts "Done: Adding new managers"
 
 puts "Adding admin"
 Admin.create(email: "admin@mail.com", password: "12345678")
