@@ -1,0 +1,10 @@
+$namespace: '.posts';
+
+#{$namespace} {
+  margin-top: $margin * 2;
+}
+
+#{$namespace}--title {
+  font-size: $font-big-size;
+  font-weight: $font-weight-semi-bold;
+}

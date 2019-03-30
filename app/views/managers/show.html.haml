@@ -9,3 +9,22 @@
       = link_to 'Edit profile', edit_manager_path(@manager), class: 'btn btn-primary'
     .student--data-info
       = link_to 'Write post', new_manager_post_path(@manager.id), class: 'btn btn-primary'
+
+- if current_manager.posts.present?
+  .posts
+    .posts--title My posts
+    %table.table
+      %thead
+        %tr
+          %th{ scope: 'col' } #
+          %th{ scope: 'col' } Body
+          %th{ scope: 'col' } Created at
+          %th{ scope: 'col' } Remove
+      %tbody
+        - current_manager.posts.each do |post|
+          %tr
+            %td{ scope: 'row' }= post.id
+            %td{ scope: 'row' }= post.body
+            %td{ scope: 'row' }= post.created_at
+            %td{ scope: 'row' }
+              = link_to "Remove", manager_post_path(manager_id: current_manager.id, id: post.id), method: :delete, data: { confirm: "Sure?" }
