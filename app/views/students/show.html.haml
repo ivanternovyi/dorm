@@ -1,1 +1,21 @@
-%h1 #Show Students
+.student
+  .student--photo-container
+    .student--photo{ style: @student.avatar_url ? "background-image: url(#{@student.avatar_url})" : '' }
+  .student--data-container
+    .student--data-info
+      .field_name= 'First name: '
+      = @student.first_name
+    .student--data-info
+      .field_name= 'Last name: '
+      = @student.last_name
+    .student--data-info
+      .field_name= 'Email: '
+      = @student.email
+    .student--data-info
+      .field_name= 'Student ID: '
+      = @student.student_id
+    .student--data-info
+      .field_name= 'Dorm Number: '
+      = @student.dorm_number
+    .student--data-info
+      = link_to 'Edit profile', edit_student_path(@student), class: 'btn btn-primary'

@@ -1,0 +1,55 @@
+$namespace: '.student';
+
+#{$namespace} {
+  margin-top: $margin * 4;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#{$namespace}--photo-container {
+  height: 300px;
+  width: 30%;
+}
+
+#{$namespace}--photo {
+  background-image: image_url('no-photo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50px;
+  height: 100%;
+}
+
+#{$namespace}--data-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  padding-left: $padding * 4;
+}
+
+#{$namespace}--data-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-right: $padding * 2;
+  font-size: $font-bigger-size;
+  padding: 0 0 $padding;
+
+  .field_name {
+    font-weight: $font-weight-semi-bold;
+    padding-right: $padding;
+  }
+
+  a {
+    color: $white;
+    font-weight: $font-weight-semi-bold;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
