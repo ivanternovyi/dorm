@@ -1,4 +1,6 @@
 class Student < ApplicationRecord
+  include Filterable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
