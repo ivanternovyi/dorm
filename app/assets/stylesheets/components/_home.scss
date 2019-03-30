@@ -9,9 +9,7 @@ $namespace: '.home';
 }
 
 #{$namespace}--text {
-  position: relative;
-  left: 5%;
-  top: 4%;
+  padding: $padding * 2 $padding * 4 0;
   font-size: $font-xx-big-size;
   font-weight: $font-weight-semi-bold;
 }
