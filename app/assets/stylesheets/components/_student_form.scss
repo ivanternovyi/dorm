@@ -5,10 +5,17 @@ $namespace: '.student-form';
   display: flex;
   width: 100%;
   justify-content: center;
-  
+
   form {
     .row {
         margin-left: 0;
+    }
+  }
+
+  .with-textarea {
+    textarea {
+      width: 700px;
+      height: 300px;
     }
   }
 }

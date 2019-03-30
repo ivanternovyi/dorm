@@ -7,3 +7,5 @@
       = @manager.email
     .student--data-info
       = link_to 'Edit profile', edit_manager_path(@manager), class: 'btn btn-primary'
+    .student--data-info
+      = link_to 'Write post', new_manager_post_path(@manager.id), class: 'btn btn-primary'

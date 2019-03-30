@@ -1,0 +1,13 @@
+.student-form
+  = simple_form_for(post, url: url) do |f|
+    = f.error_notification
+    = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+    .form-inputs.with-textarea
+      = f.input :body, as: :text,
+                       label: "Body of the post",
+                       placeholder: "Write text here...",
+                       class: 'student-textarea'
+
+    .form-actions.text-center
+      = f.submit "Submit", class: 'btn btn-primary'
