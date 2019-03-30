@@ -11,6 +11,7 @@ class StudentsController < ApplicationController
   end
 
   def show
+    render_422 if current_student&.id != @student.id && !current_admin
   end
 
   def edit
