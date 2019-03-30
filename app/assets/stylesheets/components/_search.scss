@@ -1,0 +1,26 @@
+$namespace: '.search';
+
+#{$namespace}--container {
+  margin-top: $margin * 10;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#{$namespace}--input {
+  height: 47px;
+  width: 400px;
+  padding: floor($padding * 2 / 3);
+}
+
+#{$namespace}--btn {
+  display: block;
+  margin-left: $margin;
+  padding: floor($padding * 2 / 3) $padding;
+  border-radius: 30px;
+  background: $dark-grey;
+  cursor: pointer;
+  color: $white;
+  font-size: $font-bigger-size;
+  font-weight: $font-weight-semi-bold;
+}
