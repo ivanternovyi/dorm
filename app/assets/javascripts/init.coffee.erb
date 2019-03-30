@@ -2,6 +2,7 @@ window.App ||= {}
 
 App.init = ->
   new App.UploadCsv
+  new App.Search(container: $('.js-search'))
 
 $(document).on 'turbolinks:load', ->
   App.init()

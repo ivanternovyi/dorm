@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
   before_action :find_student, except: %i[index new]
 
   def index
-    @students = Student.page(params[:page])
+    @students = Student.by_keyword(params[:q]).page(params[:page])
   end
 
   def new
