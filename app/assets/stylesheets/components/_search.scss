@@ -23,4 +23,8 @@ $namespace: '.search';
   color: $white;
   font-size: $font-bigger-size;
   font-weight: $font-weight-semi-bold;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
