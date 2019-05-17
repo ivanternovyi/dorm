@@ -13,3 +13,32 @@ $namespace: '.home';
   font-size: $font-xx-big-size;
   font-weight: $font-weight-semi-bold;
 }
+
+#{$namespace}--posts {
+  margin: $margin * 2 0 $margin;
+  text-align: center;
+  font-size: $font-xx-big-size;
+}
+
+#{$namespace}--post-item {
+  border: 1px solid $light-grey;
+  border-radius: 3px;
+  font-size: $font-big-size;
+
+  .post-title {
+    font-weight: $font-weight-bold;
+  }
+
+  .post-body {
+    font-size: $font-regular-size;
+  }
+
+  & + & {
+    margin-top: $margin;
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px $light-grey;
+    cursor: pointer;
+  }
+}
