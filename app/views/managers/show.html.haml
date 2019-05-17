@@ -3,6 +3,12 @@
     .student--photo{ style: @manager.avatar_url ? "background-image: url(#{@manager.avatar_url})" : '' }
   .student--data-container
     .student--data-info
+      .field_name= 'First name: '
+      = @manager.first_name || "not specified"
+    .student--data-info
+      .field_name= 'Last name: '
+      = @manager.last_name || "not specified"
+    .student--data-info
       .field_name= 'Email: '
       = @manager.email
     .student--data-info
