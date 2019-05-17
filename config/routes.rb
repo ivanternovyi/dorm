@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   end
 
   resources :students, only: %i[index show edit update destroy]
+
   resources :managers, only: %i[show edit update destroy] do
     resources :posts, only: %i[new edit create update destroy]
   end
+
+  resources :notifications, only: :index
 end

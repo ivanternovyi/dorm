@@ -6,6 +6,9 @@
     - if current_user
       .-role
         = link_to "as #{current_user.class}", current_user_path
+    - unless current_user&.is_a? Student
+      .-role
+        = link_to "Mailer", notifications_path
   .header--sign-container
     - if current_student
       = link_to destroy_student_session_path, method: :delete do
