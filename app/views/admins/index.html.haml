@@ -1,6 +1,10 @@
-
-
-= link_to 'Managers', managers_admins_path
-= link_to 'Students', students_admins_path
-
-= link_to 'Posts', posts_admins_path
+.dashboard
+  .dashboard--title= 'Admin dashboard'
+  = "Total managers: #{Manager.count}"
+  = link_to 'View Managers', managers_admins_path
+  = "Total students: #{Student.count}"
+  = link_to 'View Students', students_admins_path
+  = "Total posts: #{Post.count}"
+  = link_to 'View Posts', posts_admins_path
+  
+  

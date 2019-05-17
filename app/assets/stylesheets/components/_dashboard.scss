@@ -1,0 +1,15 @@
+$namespace: '.dashboard';
+
+#{$namespace} {
+  margin-top: $margin * 2;
+  display: flex;
+  flex-direction: column;  
+  text-align: center;
+  font-size: $font-big-size;
+}
+
+#{$namespace}--title {
+  font-size: $font-xx-big-size;
+  font-weight: $font-weight-semi-bold;
+  padding:  0 0 $padding;
+}
