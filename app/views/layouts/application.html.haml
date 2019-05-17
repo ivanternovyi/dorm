@@ -16,6 +16,8 @@
               = render 'partials/header'
       .wrapper--content
         .container
+          - flash.each do |key, value|
+            %div.text-center{ class: flash_class(key) }= value
           = yield
       .wrapper--footer
         .container.-footer

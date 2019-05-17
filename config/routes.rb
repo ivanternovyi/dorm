@@ -20,5 +20,9 @@ Rails.application.routes.draw do
     resources :posts, only: %i[new edit create update destroy]
   end
 
-  resources :notifications, only: :index
+  resources :notifications, only: :index do
+    collection do
+      post :notify
+    end
+  end
 end

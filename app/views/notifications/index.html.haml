@@ -1,1 +1,21 @@
-%h1 Notifications
+%h1.text-center Notify with email
+
+.student-form
+  = simple_form_for(:notification, url: notify_notifications_path) do |f|
+    .form-inputs.with-textarea
+      = f.input :subject, label: "Subject", placeholder: "Write subject here..."
+
+    .form-inputs.with-textarea
+      = f.input :email, label: "Student email", placeholder: "Write email here..."
+
+    .form-inputs.with-textarea.js-notify-everyone
+      = f.input :notify_everyone, as: :boolean
+
+    .form-inputs.with-textarea
+      = f.input :body, as: :text,
+                       label: "Body of the mail",
+                       placeholder: "Write text here...",
+                       class: 'student-textarea'
+
+    .form-actions.text-center
+      = f.submit "Notify", class: 'btn btn-primary'
