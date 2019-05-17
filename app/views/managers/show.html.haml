@@ -18,12 +18,14 @@
         %tr
           %th{ scope: 'col' } #
           %th{ scope: 'col' } Body
+          %th{ scope: 'col' } Title
           %th{ scope: 'col' } Created at
           %th{ scope: 'col' } Remove
       %tbody
         - current_manager.posts.each do |post|
           %tr
             %td{ scope: 'row' }= post.id
+            %td{ scope: 'row' }= post.title
             %td{ scope: 'row' }= post.body
             %td{ scope: 'row' }= post.created_at
             %td{ scope: 'row' }
