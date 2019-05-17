@@ -1,0 +1,36 @@
+%span.cursor-pointer.js-wanna-upload Wanna upload more?
+
+.mt-2.hidden.js-wanna-upload-form
+  = form_tag(upload_csv_admins_path, multipart: true) do
+    = file_field_tag 'students_csv'
+    = submit_tag 'Submit', class: 'js-submit-upload-csv'
+
+- if @students.present?
+  %table.table
+    %thead
+      %tr
+        %th{ scope: 'col' } #
+        %th{ scope: 'col' } First name
+        %th{ scope: 'col' } Last name
+        %th{ scope: 'col' } Email
+        %th{ scope: 'col' } Student ID
+        %th{ scope: 'col' } Dorm Number
+        %th{ scope: 'col' } created_at
+        %th{ scope: 'col' } Actions
+    %tbody
+      - @students.each do |student|
+        %tr
+          %td{ scope: 'row' }= student.id
+          %td{ scope: 'row' }= student.first_name
+          %td{ scope: 'row' }= student.last_name
+          %td{ scope: 'row' }= student.email
+          %td{ scope: 'row' }= student.student_id
+          %td{ scope: 'row' }= student.dorm_number
+          %td{ scope: 'row' }= student.created_at
+          %td{ scope: 'row' }
+            = link_to "Edit", edit_student_path(student)
+            |
+            = link_to "Remove", student_path(student), method: :delete, data: { confirm: "Sure?" }
+  = will_paginate @students
+- else
+  %h1.mt-5.text-center No students

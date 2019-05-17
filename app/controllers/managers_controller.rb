@@ -1,5 +1,5 @@
 class ManagersController < ApplicationController
-  before_action :authenticate_manager!
+  before_action :authenticate_manager
   before_action :find_manager
 
   def show
@@ -29,6 +29,6 @@ class ManagersController < ApplicationController
   end
 
   def manager_params
-    params.require(:manager).permit(:email, :avatar)
+    params.require(:manager).permit(:first_name, :last_name, :email, :avatar)
   end
 end

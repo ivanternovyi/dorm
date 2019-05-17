@@ -16,7 +16,7 @@
     .student--data-info
       = link_to 'Write post', new_manager_post_path(@manager.id), class: 'btn btn-primary'
 
-- if current_manager.posts.present?
+- if @manager.posts.present?
   .posts
     .posts--title My posts
     %table.table
@@ -29,7 +29,7 @@
           %th{ scope: 'col' } Created at
           %th{ scope: 'col' } Actions
       %tbody
-        - current_manager.posts.each do |post|
+        - @manager.posts.each do |post|
           %tr
             %td{ scope: 'row' }= post.id
             %td{ scope: 'row' }= post.title
@@ -37,6 +37,6 @@
             %td{ scope: 'row' }= post.important?
             %td{ scope: 'row' }= post.created_at
             %td{ scope: 'row' }
-              = link_to "Edit", edit_manager_post_path(manager_id: current_manager.id, id: post.id)
+              = link_to "Edit", edit_manager_post_path(manager_id: @manager.id, id: post.id)
               |
-              = link_to "Remove", manager_post_path(manager_id: current_manager.id, id: post.id), method: :delete, data: { confirm: "Sure?" }
+              = link_to "Remove", manager_post_path(manager_id: @manager.id, id: post.id), method: :delete, data: { confirm: "Sure?" }

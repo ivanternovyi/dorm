@@ -1,0 +1,25 @@
+- if @managers.present?
+  %table.table
+    %thead
+      %tr
+        %th{ scope: 'col' } #
+        %th{ scope: 'col' } First name
+        %th{ scope: 'col' } Last name
+        %th{ scope: 'col' } Email
+        %th{ scope: 'col' } created_at
+        %th{ scope: 'col' } Actions
+    %tbody
+      - @managers.each do |manager|
+        %tr
+          %td{ scope: 'row' }= manager.id
+          %td{ scope: 'row' }= manager.first_name
+          %td{ scope: 'row' }= manager.last_name
+          %td{ scope: 'row' }= manager.email
+          %td{ scope: 'row' }= manager.created_at
+          %td{ scope: 'row' }
+            = link_to "Edit", edit_manager_path(manager)
+            |
+            = link_to "Remove", manager_path(manager), method: :delete, data: { confirm: "Sure?" }
+  = will_paginate @managers
+- else
+  %h1.mt-5.text-center No managers

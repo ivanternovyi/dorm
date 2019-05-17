@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  before_action :authenticate_user, except: :index
+  before_action :authenticate_student, except: :index
   before_action :find_student, except: %i[index new]
 
   def index

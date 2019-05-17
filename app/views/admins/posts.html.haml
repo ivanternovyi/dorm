@@ -1,0 +1,25 @@
+- if @posts.present?
+  %table.table
+    %thead
+      %tr
+        %th{ scope: 'col' } #
+        %th{ scope: 'col' } Owner
+        %th{ scope: 'col' } Title
+        %th{ scope: 'col' } Body
+        %th{ scope: 'col' } created_at
+        %th{ scope: 'col' } Actions
+    %tbody
+      - @posts.each do |post|
+        %tr
+          %td{ scope: 'row' }= post.id
+          %td{ scope: 'row' }= link_to post.manager.email, manager_path(post.manager)
+          %td{ scope: 'row' }= post.title
+          %td{ scope: 'row' }= post.body
+          %td{ scope: 'row' }= post.created_at
+          %td{ scope: 'row' }
+            = link_to "Edit", edit_manager_post_path(post.manager, post)
+            |
+            = link_to "Remove", manager_post_path(post.manager, post), method: :delete, data: { confirm: "Sure?" }
+  = will_paginate @posts
+- else
+  %h1.mt-5.text-center No posts

@@ -1,26 +1,6 @@
-%span.cursor-pointer.js-wanna-upload Wanna upload more?
 
-.mt-2.hidden.js-wanna-upload-form
-  = form_tag(upload_csv_admins_path, multipart: true) do
-    = file_field_tag 'students_csv'
-    = submit_tag 'Submit', class: 'js-submit-upload-csv'
 
-- if @students.present?
-  %table.table
-    %thead
-      %tr
-        %th{ scope: 'col' } #
-        %th{ scope: 'col' } Email
-        %th{ scope: 'col' } created_at
-        %th{ scope: 'col' } Remove
-    %tbody
-      - @students.each do |student|
-        %tr
-          %td{ scope: 'row' }= student.id
-          %td{ scope: 'row' }= student.email
-          %td{ scope: 'row' }= student.created_at
-          %td{ scope: 'row' }
-            = link_to "Remove", student_path(student), method: :delete, data: { confirm: "Sure?" }
-  = will_paginate @students
-- else
-  %h1.mt-5.text-center No students
+= link_to 'Managers', managers_admins_path
+= link_to 'Students', students_admins_path
+
+= link_to 'Posts', posts_admins_path

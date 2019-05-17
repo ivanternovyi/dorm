@@ -9,9 +9,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params.merge(manager_id: current_manager.id))
+    @post = Post.new(post_params.merge(manager_id: params[:manager_id]))
     if @post.save
-      redirect_to manager_path(current_manager)
+      redirect_to manager_path(params[:manager_id])
     else
       render :new
     end
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   def update
     @post.assign_attributes(post_params)
     if @post.save
-      redirect_to manager_path(current_manager)
+      redirect_to manager_path(params[:manager_id])
     else
       render :edit
     end

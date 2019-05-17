@@ -1,8 +1,18 @@
 class AdminsController < ApplicationController
   before_action :authenticate_admin!
 
-  def index
+  def index; end
+
+  def managers
+    @managers = Manager.page(params[:page])
+  end
+
+  def students
     @students = Student.page(params[:page])
+  end
+
+  def posts
+    @posts = Post.page(params[:page])
   end
 
   def upload_csv

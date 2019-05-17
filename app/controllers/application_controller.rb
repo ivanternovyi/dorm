@@ -7,7 +7,11 @@ class ApplicationController < ActionController::Base
     render file: 'public/422.html'
   end
 
-  def authenticate_user
+  def authenticate_student
     authenticate_student! unless current_admin
+  end
+
+  def authenticate_manager
+    authenticate_manager! unless current_admin
   end
 end

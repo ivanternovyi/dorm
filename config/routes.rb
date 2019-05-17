@@ -3,11 +3,14 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :students
 
-  root to: "home#index"
+  root to: 'home#index'
 
   resources :admins, only: :index do
     collection do
       post :upload_csv
+      get :students
+      get :managers
+      get :posts
     end
   end
 
