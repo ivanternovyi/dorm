@@ -5,6 +5,9 @@
 
     .form-inputs.with-textarea
       = f.input :title, label: "Title", placeholder: "Write title here..."
+    
+    .form-inputs.with-textarea
+      = f.input :important, as: :boolean
 
     .form-inputs.with-textarea
       = f.input :body, as: :text,

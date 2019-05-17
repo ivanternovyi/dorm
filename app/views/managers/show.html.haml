@@ -17,16 +17,20 @@
       %thead
         %tr
           %th{ scope: 'col' } #
-          %th{ scope: 'col' } Body
           %th{ scope: 'col' } Title
+          %th{ scope: 'col' } Body
+          %th{ scope: 'col' } Important?
           %th{ scope: 'col' } Created at
-          %th{ scope: 'col' } Remove
+          %th{ scope: 'col' } Actions
       %tbody
         - current_manager.posts.each do |post|
           %tr
             %td{ scope: 'row' }= post.id
             %td{ scope: 'row' }= post.title
             %td{ scope: 'row' }= post.body
+            %td{ scope: 'row' }= post.important?
             %td{ scope: 'row' }= post.created_at
             %td{ scope: 'row' }
+              = link_to "Edit", edit_manager_post_path(manager_id: current_manager.id, id: post.id)
+              |
               = link_to "Remove", manager_post_path(manager_id: current_manager.id, id: post.id), method: :delete, data: { confirm: "Sure?" }
