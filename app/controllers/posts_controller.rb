@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
-  before_action :find_post, except: %i[new create]
+  before_action :find_post, except: %i[index new create]
+
+  def index
+    @posts = Post.all
+  end
 
   def new
     @post = Post.new

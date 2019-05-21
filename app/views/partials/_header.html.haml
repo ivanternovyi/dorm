@@ -8,6 +8,8 @@
         = link_to "as #{current_user.class}", current_user_path
     - unless current_user&.is_a? Student
       .-role
+        = link_to "Timeline", posts_path
+      .-role
         = link_to "Mailer", notifications_path
   .header--sign-container
     - if current_student

@@ -25,4 +25,6 @@ Rails.application.routes.draw do
       post :notify
     end
   end
+
+  resources :posts, only: :index
 end
