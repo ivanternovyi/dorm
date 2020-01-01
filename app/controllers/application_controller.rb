@@ -1,11 +1,9 @@
 class ApplicationController < ActionController::Base
+  include Errorable
+
   protect_from_forgery with: :exception
 
   protected
-
-  def render_422
-    render file: 'public/422.html'
-  end
 
   def authenticate_student
     authenticate_student! unless current_admin

@@ -11,7 +11,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-    render_422 if current_student&.id != @student.id && !current_admin
+    render_422 if policy.deny_view_student?(current_admin)
   end
 
   def edit
@@ -41,6 +41,10 @@ class StudentsController < ApplicationController
   end
 
   private
+
+  def policy
+    @policy ||= UserPolicy.new(current_student, @student)
+  end
 
   def find_student
     @student ||= Student.find(params[:id])
