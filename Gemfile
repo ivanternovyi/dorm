@@ -43,7 +43,7 @@ gem 'bootstrap', '~> 4.2.1'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem 'simple_form'
-gem "rmagick", "~> 2.13.1"
+gem "rmagick", "~> 4.0.0"
 gem 'will_paginate', '~> 3.1.0'
 
 
