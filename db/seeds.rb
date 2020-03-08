@@ -40,3 +40,20 @@ puts "Done: Adding new managers"
 puts "Adding admin"
 Admin.create(email: "admin@mail.com", password: "12345678")
 puts "Done: Adding admin"
+
+puts "Adding posts"
+10.times do
+  Post.create(
+    title: "seed posts",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, \
+           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \
+           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris\
+           nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in \
+           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. \
+           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt \
+           mollit anim id est laborum.",
+    manager_id: 1
+  )
+end
+Post.limit(3).update_all(important: true)
+puts "Done: Adding posts"
