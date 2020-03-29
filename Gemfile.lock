@@ -158,6 +158,8 @@ GEM
     public_suffix (4.0.2)
     puma (3.12.2)
     rack (2.0.8)
+    rack-protection (2.0.8.1)
+      rack
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -198,6 +200,7 @@ GEM
       execjs
       railties (>= 3.2)
       tilt
+    redis (4.1.3)
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -224,6 +227,11 @@ GEM
       sprockets-rails
       tilt
     sexp_processor (4.13.0)
+    sidekiq (6.0.6)
+      connection_pool (>= 2.2.2)
+      rack (~> 2.0)
+      rack-protection (>= 2.0.0)
+      redis (>= 4.1.0)
     simple_form (5.0.1)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -288,6 +296,7 @@ DEPENDENCIES
   react-rails
   rmagick (~> 4.0.0)
   sass-rails (~> 5.0)
+  sidekiq
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)

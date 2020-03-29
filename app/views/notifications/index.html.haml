@@ -9,6 +9,9 @@
       = f.input :email, label: "Student email", placeholder: "Write email here..."
 
     .form-inputs.with-textarea
+      = f.input :send_to_all, as: :boolean
+
+    .form-inputs.with-textarea
       = f.input :body, as: :text,
                        label: "Body of the mail",
                        placeholder: "Write text here...",

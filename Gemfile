@@ -45,6 +45,8 @@ gem 'carrierwave', '~> 1.0'
 gem 'simple_form'
 gem "rmagick", "~> 4.0.0"
 gem 'will_paginate', '~> 3.1.0'
+# backgound jobs
+gem 'sidekiq'
 
 
 # Use Capistrano for deployment

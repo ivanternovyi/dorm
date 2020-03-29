@@ -1,4 +1,10 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+  authenticate :admin do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   devise_for :managers
   devise_for :admins
   devise_for :students

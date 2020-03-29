@@ -1,10 +1,10 @@
 .dashboard
   .dashboard--title= 'Admin dashboard'
+  = link_to 'Sidekiq', sidekiq_web_path
   = "Total managers: #{Manager.count}"
   = link_to 'View Managers', managers_admins_path
   = "Total students: #{Student.count}"
   = link_to 'View Students', students_admins_path
   = "Total posts: #{Post.count}"
   = link_to 'View Posts', posts_admins_path
-  
   

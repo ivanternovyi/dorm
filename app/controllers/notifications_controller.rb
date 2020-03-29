@@ -5,19 +5,30 @@ class NotificationsController < ApplicationController
   end
 
   def notify
-    NotificationsMailer.notify(
-      notification_params[:email],
-      notification_params[:subject],
-      notification_params[:body]
-    ).deliver_now!
+    notify_students_with_mail
 
-    flash[:success] = "Letter was successfully sent to #{notification_params[:email]}"
+    flash[:success] = "Successfully sent"
     redirect_to action: :index
   end
 
   private
 
+  def notify_students_with_mail
+    if notification_params[:send_to_all]
+      NotifyAllStudentsJob.perform_later(
+        notification_params[:subject],
+        notification_params[:body]
+      )
+    else
+      NotifyStudentJob.perform_later(
+        notification_params[:email],
+        notification_params[:subject],
+        notification_params[:body]
+      )
+    end
+  end
+
   def notification_params
-    params.require(:notification).permit(:subject, :email, :body)
+    params.require(:notification).permit(:subject, :email, :body, :send_to_all)
   end
 end
