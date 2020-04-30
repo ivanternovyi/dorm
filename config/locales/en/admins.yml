@@ -1,0 +1,40 @@
+---
+  en:
+    admins:
+      common:
+        actions: Actions
+        sure: Sure?
+        edit: Edit
+        remove: Remove
+      index:
+        dashboard: Admin dashboard 
+        sidekiq: Sidekiq
+        total_managers: "Total managers: %{managers_count}"
+        view_managers: View managers
+        total_students: "Total students: %{students_count}"
+        view_students: View students
+        total_posts: "Total posts: %{posts_count}"
+        view_posts: View posts
+      managers:
+        first_name: First name
+        last_name: Last name
+        email: Email
+        created_at: Created at
+        no_managers: No managers
+      posts:
+        owner: Owner
+        title: Title
+        body: Body
+        important: Important
+        created_at: Created at
+        no_posts: No posts
+      students:
+        upload_more: Wanna upload more?
+        submit: Submit
+        first_name: First name
+        last_name: Last name
+        email: Email
+        student_id: Student ID
+        dorm_number: Dorm number
+        created_at: Created at
+        no_students: No students

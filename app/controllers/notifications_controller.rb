@@ -7,7 +7,7 @@ class NotificationsController < ApplicationController
   def notify
     notify_students_with_mail
 
-    flash[:success] = "Successfully sent"
+    flash[:success] = t('flash.successfully_sent')
     redirect_to action: :index
   end
 

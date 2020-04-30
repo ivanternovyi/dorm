@@ -3,11 +3,11 @@
     %thead
       %tr
         %th{ scope: 'col' } #
-        %th{ scope: 'col' } First name
-        %th{ scope: 'col' } Last name
-        %th{ scope: 'col' } Email
-        %th{ scope: 'col' } created_at
-        %th{ scope: 'col' } Actions
+        %th{ scope: 'col' }= t('admins.managers.first_name')
+        %th{ scope: 'col' }= t('admins.managers.last_name')
+        %th{ scope: 'col' }= t('admins.managers.email')
+        %th{ scope: 'col' }= t('admins.managers.created_at')
+        %th{ scope: 'col' }= t('admins.common.actions')
     %tbody
       - @managers.each do |manager|
         %tr
@@ -17,9 +17,12 @@
           %td{ scope: 'row' }= manager.email
           %td{ scope: 'row' }= manager.created_at
           %td{ scope: 'row' }
-            = link_to "Edit", edit_manager_path(manager)
+            = link_to t('admins.common.edit'), edit_manager_path(manager)
             |
-            = link_to "Remove", manager_path(manager), method: :delete, data: { confirm: "Sure?" }
+            = link_to t('admins.common.remove'),
+                      manager_path(manager),
+                      method: :delete,
+                      data: { confirm: t('admins.common.sure') }
   = will_paginate @managers
 - else
-  %h1.mt-5.text-center No managers
+  %h1.mt-5.text-center= t('admins.managers.no_managers')

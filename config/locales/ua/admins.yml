@@ -1,0 +1,41 @@
+---
+  ua:
+    admins:
+      common:
+        actions: Дії
+        sure: Точно?
+        edit: Редагувати
+        remove: Видалити
+      index:
+        dashboard: Дашборд для адмінів
+        sidekiq: Sidekiq
+        total_managers: "Всього менеджерів: %{managers_count}"
+        view_managers: Переглянути менеджерів
+        total_students: "Всього студентів: %{students_count}"
+        view_students: Переглянути студентів
+        total_posts: "Всього дописів: %{posts_count}"
+        view_posts: Переглянути дописи
+      managers:
+        first_name: Ім'я
+        last_name: Прізвище
+        email: Email
+        created_at: Дата створення
+        no_managers: Менеджери відсутні
+      posts:
+        owner: Автор
+        title: Заголовок
+        body: Вміст
+        important: Важливий
+        created_at: Дата створення
+        no_posts: Дописи відсутні
+      students:
+        upload_more: Завантажити ще?
+        submit: Підтвердити
+        first_name: Ім'я
+        last_name: Прізвище
+        email: Email
+        student_id: Студентський квиток
+        dorm_number: Номер гуртожитку
+        created_at: Дата створення
+        no_students: Студенти відстуні
+  

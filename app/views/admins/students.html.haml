@@ -1,22 +1,22 @@
-%span.cursor-pointer.js-wanna-upload Wanna upload more?
+%span.cursor-pointer.js-wanna-upload= t('admins.students.upload_more')
 
 .mt-2.hidden.js-wanna-upload-form
   = form_tag(upload_csv_admins_path, multipart: true) do
     = file_field_tag 'students_csv'
-    = submit_tag 'Submit', class: 'js-submit-upload-csv'
+    = submit_tag t('admins.students.submit'), class: 'js-submit-upload-csv'
 
 - if @students.present?
   %table.table
     %thead
       %tr
         %th{ scope: 'col' } #
-        %th{ scope: 'col' } First name
-        %th{ scope: 'col' } Last name
-        %th{ scope: 'col' } Email
-        %th{ scope: 'col' } Student ID
-        %th{ scope: 'col' } Dorm Number
-        %th{ scope: 'col' } created_at
-        %th{ scope: 'col' } Actions
+        %th{ scope: 'col' }= t('admins.students.first_name')
+        %th{ scope: 'col' }= t('admins.students.last_name')
+        %th{ scope: 'col' }= t('admins.students.email')
+        %th{ scope: 'col' }= t('admins.students.student_id')
+        %th{ scope: 'col' }= t('admins.students.dorm_number')
+        %th{ scope: 'col' }= t('admins.students.created_at')
+        %th{ scope: 'col' }= t('admins.common.actions')
     %tbody
       - @students.each do |student|
         %tr
@@ -28,9 +28,12 @@
           %td{ scope: 'row' }= student.dorm_number
           %td{ scope: 'row' }= student.created_at
           %td{ scope: 'row' }
-            = link_to "Edit", edit_student_path(student)
+            = link_to t('admins.common.edit'), edit_student_path(student)
             |
-            = link_to "Remove", student_path(student), method: :delete, data: { confirm: "Sure?" }
+            = link_to t('admins.common.remove'),
+                      student_path(student),
+                      method: :delete,
+                      data: { confirm: t('admins.common.sure') }
   = will_paginate @students
 - else
-  %h1.mt-5.text-center No students
+  %h1.mt-5.text-center= t('admins.students.no_students')

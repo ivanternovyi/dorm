@@ -3,12 +3,12 @@
     %thead
       %tr
         %th{ scope: 'col' } #
-        %th{ scope: 'col' } Owner
-        %th{ scope: 'col' } Title
-        %th{ scope: 'col' } Body
-        %th{ scope: 'col' } Important
-        %th{ scope: 'col' } created_at
-        %th{ scope: 'col' } Actions
+        %th{ scope: 'col' }= t('admins.posts.owner')
+        %th{ scope: 'col' }= t('admins.posts.title')
+        %th{ scope: 'col' }= t('admins.posts.body')
+        %th{ scope: 'col' }= t('admins.posts.important')
+        %th{ scope: 'col' }= t('admins.posts.created_at')
+        %th{ scope: 'col' }= t('admins.common.actions')
     %tbody
       - @posts.each do |post|
         %tr
@@ -19,9 +19,12 @@
           %td{ scope: 'row' }= post.important?
           %td{ scope: 'row' }= post.created_at
           %td{ scope: 'row' }
-            = link_to "Edit", edit_manager_post_path(post.manager, post)
+            = link_to t('admins.common.edit'), edit_manager_post_path(post.manager, post)
             |
-            = link_to "Remove", manager_post_path(post.manager, post), method: :delete, data: { confirm: "Sure?" }
+            = link_to t('admins.common.remove'),
+                      manager_post_path(post.manager, post),
+                      method: :delete,
+                      data: { confirm: t('admins.common.sure') }
   = will_paginate @posts
 - else
-  %h1.mt-5.text-center No posts
+  %h1.mt-5.text-center= t('admins.posts.no_posts')
