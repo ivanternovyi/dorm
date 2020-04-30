@@ -1,0 +1,7 @@
+---
+  en:
+    home:
+      lost_id: Lost id?
+      find_by: Find by first name, last name, email...
+      find_students: Find Students
+      important_news: Important news

@@ -1,0 +1,12 @@
+---
+  ua:
+    layouts:
+      header:
+        as: "як %{user_class}"
+        timeline: Новини
+        mailer: Розсилка
+        sign_out: Вийти
+        log_in: Увійти
+        sign_up: Зареєструватись
+      footer:
+        copyright: "Всі права збережено © %{year_now}"
