@@ -1,0 +1,14 @@
+---
+  en:
+    modals:
+      enter_modal:
+        choice: Would you like to sign in or sign up?
+      sign_in_modal:
+        you_are: "You are:"
+        student: Student
+        manager: Manager
+        admin: Admin
+      sign_up_modal:
+        you_are: "You are:"
+        student: Student
+        manager: Manager

@@ -1,0 +1,11 @@
+.modal.js-modal#sign_in_modal
+  .modal--overlow.js-modal-close
+  .modal--container
+    .modal--header
+      .modal--header-subline= t('modals.sign_in_modal.you_are')
+      = link_to t('modals.sign_in_modal.student'), new_student_session_path,
+                                                   class: 'modal--header-link'
+      = link_to t('modals.sign_in_modal.manager'), new_manager_session_path,
+                                                   class: 'modal--header-link'
+      = link_to t('modals.sign_in_modal.admin'), new_admin_session_path,
+                                                 class: 'modal--header-link'

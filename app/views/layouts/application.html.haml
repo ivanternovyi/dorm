@@ -20,6 +20,7 @@
           - flash.each do |key, value|
             %div.text-center{ class: flash_class(key) }= value
           = yield
+        = render 'shared/modals/enter_modal'
       .wrapper--footer
         .container.-footer
           = render 'partials/footer'

@@ -1,0 +1,9 @@
+.modal.js-modal#sign_up_modal
+  .modal--overlow.js-modal-close
+  .modal--container
+    .modal--header
+      .modal--header-subline= t('modals.sign_up_modal.you_are')
+      = link_to t('modals.sign_up_modal.student'), new_student_registration_path,
+                                                   class: 'modal--header-link'
+      = link_to t('modals.sign_up_modal.manager'), new_manager_registration_path,
+                                                   class: 'modal--header-link'

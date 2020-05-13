@@ -4,6 +4,10 @@ body {
   min-height: 100%;
   padding-top: 0;
   font-size: $font-regular-size;
+  
+  &.-modal-opened {
+    overflow: hidden;
+  }
 }
 
 html {

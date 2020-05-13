@@ -1,0 +1,14 @@
+---
+  ua:
+    modals:
+      enter_modal:
+        choice: "Що саме ви бажаєте: увійти чи зареєструватись?"
+      sign_in_modal:
+        you_are: "Ви є:"
+        student: Студент
+        manager: Менеджер
+        admin: Адмін
+      sign_up_modal:
+        you_are: "Ви є:"
+        student: Студент
+        manager: Менеджер

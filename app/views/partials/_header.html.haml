@@ -16,17 +16,9 @@
     = link_to_unless I18n.locale == :en, "En", locale: :en
     |
     = link_to_unless I18n.locale == :ua, "Ua", locale: :ua
-    - if current_student
-      = link_to destroy_student_session_path, method: :delete do
-        .header--sign-up= t('layouts.header.sign_out')
-    - elsif current_admin
-      = link_to destroy_admin_session_path, method: :delete do
-        .header--sign-up= t('layouts.header.sign_out')
-    - elsif current_manager
-      = link_to destroy_manager_session_path, method: :delete do
+
+    - if current_user
+      = link_to destroy_user_session_path, method: :delete do
         .header--sign-up= t('layouts.header.sign_out')
     - else
-      = link_to new_student_session_path do
-        .header--sign-up= t('layouts.header.log_in')
-      = link_to new_student_registration_path do
-        .header--sign-up= t('layouts.header.sign_up')
+      .header--sign-up{ data: { modal: 'enter_modal' } }= t('layouts.header.log_in')

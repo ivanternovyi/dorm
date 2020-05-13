@@ -1,0 +1,10 @@
+.modal.js-modal#enter_modal
+  .modal--overlow.js-modal-close
+  .modal--container
+    .modal--header
+      .modal--header-subline= t('modals.enter_modal.choice')
+      .modal--header-link.js-modal-close{ data: { modal: 'sign_in_modal' } }= t('layouts.header.log_in')
+      .modal--header-link.js-modal-close{ data: { modal: 'sign_up_modal' } }= t('layouts.header.sign_up')
+
+= render 'shared/modals/sign_up_modal'
+= render 'shared/modals/sign_in_modal'

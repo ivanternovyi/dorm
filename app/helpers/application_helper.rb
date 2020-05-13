@@ -13,6 +13,16 @@ module ApplicationHelper
     end
   end
 
+  def destroy_user_session_path
+    if current_user.is_a? Admin
+      destroy_admin_session_path
+    elsif current_user.is_a? Manager
+      destroy_manager_session_path
+    else
+      destroy_student_session_path
+    end
+  end
+
   def flash_class(level)
     case level
     when 'notice' then "alert alert-info"
