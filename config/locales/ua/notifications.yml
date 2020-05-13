@@ -1,0 +1,13 @@
+---
+  ua:
+    notifications:
+      index:
+        notify_with_email: Оповістити поштою
+        subject: Тема листа
+        subject_placeholder: Введіть тему листа...
+        email: Пошта студента
+        email_placeholder: Введіть пошту...
+        send_to_all: Надіслати усім студентам
+        body: Тіло листа
+        body_placeholder: Введіть текст листа...
+        notify: Оповістити

@@ -1,0 +1,13 @@
+---
+  en:
+    notifications:
+      index:
+        notify_with_email: Notify with email
+        subject: Subject
+        subject_placeholder: Write subject here...
+        email: Student email
+        email_placeholder: Write email here...
+        send_to_all: Send to all
+        body: Body of the mail
+        body_placeholder: Write text here
+        notify: Notify
