@@ -1,0 +1,10 @@
+---
+  ua:
+    managers:
+      show:
+        first_name: "Ім`я: "
+        last_name: "Прізвище: "
+        email: "Email: "
+        edit: Редагувати профіль
+        write_post: Написати допис
+        my_posts: Мої дописи

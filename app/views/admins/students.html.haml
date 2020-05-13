@@ -34,6 +34,6 @@
                       student_path(student),
                       method: :delete,
                       data: { confirm: t('admins.common.sure') }
-  = will_paginate @students
+  = will_paginate @students, previous_label: t('common.previous'), next_label: t('common.next')
 - else
   %h1.mt-5.text-center= t('admins.students.no_students')

@@ -23,6 +23,6 @@
                       manager_path(manager),
                       method: :delete,
                       data: { confirm: t('admins.common.sure') }
-  = will_paginate @managers
+  = will_paginate @managers, previous_label: t('common.previous'), next_label: t('common.next')
 - else
   %h1.mt-5.text-center= t('admins.managers.no_managers')

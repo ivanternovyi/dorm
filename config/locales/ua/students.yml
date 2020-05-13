@@ -1,0 +1,17 @@
+---
+  ua:
+    students:
+      index:
+        first_name: "Ім'я: %{name}"
+        last_name: "Прізвище: %{name}"
+        email: "Email: %{email}"
+        student_id: "Студ. квиток: %{student_id}"
+        dorm: "Гуртожиток #%{number}"
+        no_students: Не знайдено студентів
+      show:
+        first_name: Ім'я
+        last_name: Прізвище
+        email: Email
+        student_id: Студентський квток
+        dorm_number: Номер гуртожитку
+        edit: Редагувати профіль

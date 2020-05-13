@@ -4,16 +4,15 @@
     = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
     .form-inputs.with-textarea
-      = f.input :title, label: "Title", placeholder: "Write title here..."
+      = f.input :title, placeholder: t('activerecord.attributes.post.title_placeholder')
     
     .form-inputs.with-textarea
       = f.input :important, as: :boolean
 
     .form-inputs.with-textarea
       = f.input :body, as: :text,
-                       label: "Body of the post",
-                       placeholder: "Write text here...",
+                       placeholder: t('activerecord.attributes.post.body_placeholder'),
                        class: 'student-textarea'
 
     .form-actions.text-center
-      = f.submit "Submit", class: 'btn btn-primary'
+      = f.submit t('common.submit'), class: 'btn btn-primary'

@@ -1,0 +1,11 @@
+---
+  ua:
+    common:
+      not_specified: Не вказано
+      update: Оновити
+      edit: Редагувати
+      remove: Видалити
+      actions: Дії
+      next: Наступна сторінка
+      previous: Попередня сторінка
+      submit: Зберегти

@@ -5,12 +5,13 @@
         .student-list--item-header
           .-image{ style: student.avatar_url ? "background-image: url(#{student.avatar_url})" : '' }
           .-name
-            .-name-item= "First name: #{student.first_name}"
-            .-name-item= "Last name: #{student.last_name}"
+            .-name-item= t('students.index.first_name', name: student.first_name)
+            .-name-item= t('students.index.last_name', name: student.last_name)
         .student-list--item-footer
-          .-info-data= "Email: #{student.email} "
-          .-info-data= "Student ID: #{student.student_id}"
-          .-info-data= "Dorm ##{student.dorm_number}"
-  = will_paginate @students
+          .-info-data= t('students.index.email', email: student.email)
+          .-info-data= t('students.index.student_id', student_id: student.student_id)
+          .-info-data= t('students.index.dorm', number: student.dorm_number)
+
+  = will_paginate @students, previous_label: t('common.previous'), next_label: t('common.next')
 - else
-  %h1 No students found
+  %h1= t('students.index.no_students')

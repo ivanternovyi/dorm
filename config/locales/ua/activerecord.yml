@@ -1,0 +1,22 @@
+---
+  ua:
+    activerecord:
+      attributes:
+        manager:
+          first_name: Ім'я
+          last_name: Прізвище
+          email: Email
+          avatar: Фото
+        student:
+          first_name: Ім'я
+          last_name: Прізвище
+          email: Email
+          avatar: Фото
+          student_id: Студентський квиток
+        post:
+          title: Заголовок
+          title_placeholder: Введіть заголовок...
+          body: Вміст
+          body_placeholder: Введіть текст...
+          important: Важливий
+          created_at: Дата створення

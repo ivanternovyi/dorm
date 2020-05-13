@@ -1,0 +1,11 @@
+---
+  en:
+    common:
+      not_specified: Not specified
+      update: Update
+      edit: Edit
+      remove: Remove
+      actions: Actions
+      next: Next page
+      previous: Previous page
+      submit: Submit

@@ -1,0 +1,22 @@
+---
+  en:
+    activerecord:
+      attributes:
+        manager:
+          first_name: First name
+          last_name: Last name
+          email: Email
+          avatar: Photo
+        student:
+          first_name: First name
+          last_name: Last name
+          email: Email
+          avatar: Photo
+          student_id: Student ID
+        post:
+          title: Title
+          title_placeholder: Write title here...
+          body: Body
+          body_placeholder: Write text here...
+          important: Important?
+          created_at: Created at

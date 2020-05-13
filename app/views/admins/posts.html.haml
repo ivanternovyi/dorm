@@ -25,6 +25,6 @@
                       manager_post_path(post.manager, post),
                       method: :delete,
                       data: { confirm: t('admins.common.sure') }
-  = will_paginate @posts
+  = will_paginate @posts, previous_label: t('common.previous'), next_label: t('common.next')
 - else
   %h1.mt-5.text-center= t('admins.posts.no_posts')

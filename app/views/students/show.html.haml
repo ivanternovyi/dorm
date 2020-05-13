@@ -3,19 +3,19 @@
     .student--photo{ style: @student.avatar_url ? "background-image: url(#{@student.avatar_url})" : '' }
   .student--data-container
     .student--data-info
-      .field_name= 'First name: '
+      .field_name= t('students.show.first_name')
       = @student.first_name
     .student--data-info
-      .field_name= 'Last name: '
+      .field_name= t('students.show.last_name')
       = @student.last_name
     .student--data-info
-      .field_name= 'Email: '
+      .field_name= t('students.show.email')
       = @student.email
     .student--data-info
-      .field_name= 'Student ID: '
+      .field_name= t('students.show.student_id')
       = @student.student_id
     .student--data-info
-      .field_name= 'Dorm Number: '
+      .field_name= t('students.show.dorm_number')
       = @student.dorm_number
     .student--data-info
-      = link_to 'Edit profile', edit_student_path(@student), class: 'btn btn-primary'
+      = link_to t('students.show.edit'), edit_student_path(@student), class: 'btn btn-primary'

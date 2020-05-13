@@ -7,8 +7,8 @@
       = f.input :first_name
       = f.input :last_name
       = f.input :email
-      = f.input :student_id, label: "Student ID", placeholder: "BK №11502598"
+      = f.input :student_id, placeholder: "BK №11502598"
       = f.input :avatar, as: :file, multipart: true
 
     .form-actions.text-center
-      = f.submit "Update", class: 'btn btn-primary'
+      = f.submit t('common.update'), class: 'btn btn-primary'

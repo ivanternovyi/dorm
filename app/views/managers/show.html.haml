@@ -3,31 +3,31 @@
     .student--photo{ style: @manager.avatar_url ? "background-image: url(#{@manager.avatar_url})" : '' }
   .student--data-container
     .student--data-info
-      .field_name= 'First name: '
-      = @manager.first_name || "not specified"
+      .field_name= t('managers.show.first_name')
+      = @manager.first_name || t('common.not_specified')
     .student--data-info
-      .field_name= 'Last name: '
-      = @manager.last_name || "not specified"
+      .field_name= t('managers.show.last_name')
+      = @manager.last_name || t('common.not_specified')
     .student--data-info
-      .field_name= 'Email: '
+      .field_name= t('managers.show.email')
       = @manager.email
     .student--data-info
-      = link_to 'Edit profile', edit_manager_path(@manager), class: 'btn btn-primary'
+      = link_to t('managers.show.edit'), edit_manager_path(@manager), class: 'btn btn-primary'
     .student--data-info
-      = link_to 'Write post', new_manager_post_path(@manager.id), class: 'btn btn-primary'
+      = link_to t('managers.show.write_post'), new_manager_post_path(@manager.id), class: 'btn btn-primary'
 
 - if @manager.posts.present?
   .posts
-    .posts--title My posts
+    .posts--title= t('managers.show.my_posts')
     %table.table
       %thead
         %tr
           %th{ scope: 'col' } #
-          %th{ scope: 'col' } Title
-          %th{ scope: 'col' } Body
-          %th{ scope: 'col' } Important?
-          %th{ scope: 'col' } Created at
-          %th{ scope: 'col' } Actions
+          %th{ scope: 'col' }= t('activerecord.attributes.post.title')
+          %th{ scope: 'col' }= t('activerecord.attributes.post.body')
+          %th{ scope: 'col' }= t('activerecord.attributes.post.important')
+          %th{ scope: 'col' }= t('activerecord.attributes.post.created_at')
+          %th{ scope: 'col' }= t('common.actions')
       %tbody
         - @manager.posts.each do |post|
           %tr
@@ -37,6 +37,6 @@
             %td{ scope: 'row' }= post.important?
             %td{ scope: 'row' }= post.created_at
             %td{ scope: 'row' }
-              = link_to "Edit", edit_manager_post_path(manager_id: @manager.id, id: post.id)
+              = link_to t('common.edit'), edit_manager_post_path(manager_id: @manager.id, id: post.id)
               |
-              = link_to "Remove", manager_post_path(manager_id: @manager.id, id: post.id), method: :delete, data: { confirm: "Sure?" }
+              = link_to t('common.remove'), manager_post_path(manager_id: @manager.id, id: post.id), method: :delete, data: { confirm: "Sure?" }

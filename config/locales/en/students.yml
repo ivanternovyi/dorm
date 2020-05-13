@@ -1,0 +1,17 @@
+---
+  en:
+    students:
+      index:
+        first_name: "First name: %{name}"
+        last_name: "Last name: %{name}"
+        email: "Email: %{email}"
+        student_id: "Student ID: %{student_id}"
+        dorm: "Dorm #%{number}"
+        no_students: No students found
+      show:
+        first_name: First name
+        last_name: Last name
+        email: Email
+        student_id: Student ID
+        dorm: Dorm number
+        edit: Edit profile
