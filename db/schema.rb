@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_19_203527) do
+ActiveRecord::Schema.define(version: 2020_05_19_210105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2020_05_19_203527) do
     t.datetime "updated_at", null: false
     t.string "students_csv"
     t.index ["email"], name: "index_admins_on_email", unique: true
+  end
+
+  create_table "claims", force: :cascade do |t|
+    t.boolean "priority", default: false
+    t.datetime "expires_at"
+    t.bigint "student_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_claims_on_student_id"
   end
 
   create_table "managers", id: :serial, force: :cascade do |t|
@@ -78,4 +87,5 @@ ActiveRecord::Schema.define(version: 2020_05_19_203527) do
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "claims", "students"
 end
