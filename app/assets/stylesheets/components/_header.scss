@@ -61,3 +61,8 @@ $namespace: '.header';
     background-color: $warm-grey;
   }
 }
+
+#{$namespace}--locale {
+  padding: floor($padding * 2 / 3);
+  cursor: pointer;
+}

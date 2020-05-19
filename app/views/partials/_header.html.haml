@@ -6,16 +6,23 @@
     - if current_user
       .-role
         = link_to t('layouts.header.as', user_class: current_user.class), current_user_path
-    - unless current_user&.is_a? Student
-      .-role
+
+    .dropdown--container
+      .dropdown--title= t('layouts.header.menu')
+      .dropdown--content
         = link_to t('layouts.header.timeline'), posts_path
-      .-role
-        = link_to t('layouts.header.mailer'), notifications_path
+        - if current_user
+          = link_to t('layouts.header.students'), students_path
+          -# TODO: add proper link
+          = link_to t('layouts.header.rooms'), notifications_path
+          - unless current_user.is_a? Student
+            = link_to t('layouts.header.mailer'), notifications_path
+        
   .header--sign-container
-    -# TODO: fix language choose
-    = link_to_unless I18n.locale == :en, "En", locale: :en
-    |
-    = link_to_unless I18n.locale == :ua, "Ua", locale: :ua
+    .header--locale
+      = link_to_unless I18n.locale == :en, "En", locale: :en
+      |
+      = link_to_unless I18n.locale == :ua, "Ua", locale: :ua
 
     - if current_user
       = link_to destroy_user_session_path, method: :delete do

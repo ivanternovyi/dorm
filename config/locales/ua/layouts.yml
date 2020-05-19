@@ -3,10 +3,13 @@
     layouts:
       header:
         as: "як %{user_class}"
+        menu: Меню
         timeline: Новини
         mailer: Розсилка
         sign_out: Вийти
         log_in: Увійти
         sign_up: Зареєструватись
+        students: Студенти
+        rooms: Кімнати
       footer:
         copyright: "Всі права збережено © %{year_now}"

@@ -1,0 +1,43 @@
+$namespace: '.dropdown';
+
+#{$namespace}--title {
+  margin-left: $margin;
+  font-weight: $font-weight-semi-bold;
+  color: $light-grey;
+
+  &:hover {
+    opacity: .7;
+  }
+}
+
+#{$namespace}--container {
+  position: relative;
+  display: inline-block;
+}
+
+#{$namespace}--content {
+  display: none;
+  position: absolute;
+  background-color: $main-grey;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+#{$namespace}--content a {
+  padding: floor($padding * 2 / 3);
+  text-decoration: none;
+  display: block;
+}
+
+#{$namespace}--content a:hover {
+  background-color: $warm-grey;
+}
+
+#{$namespace}--container:hover #{$namespace}--content {
+  display: block;
+}
+
+#{$namespace}--container:hover #{$namespace}--title {
+  opacity: .7;
+}
