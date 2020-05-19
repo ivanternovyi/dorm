@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_19_210105) do
+ActiveRecord::Schema.define(version: 2020_05_19_213749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 2020_05_19_210105) do
     t.datetime "updated_at", null: false
     t.string "students_csv"
     t.index ["email"], name: "index_admins_on_email", unique: true
+  end
+
+  create_table "claim_rooms", force: :cascade do |t|
+    t.string "status", default: "new"
+    t.bigint "claim_id"
+    t.bigint "room_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["claim_id"], name: "index_claim_rooms_on_claim_id"
+    t.index ["room_id"], name: "index_claim_rooms_on_room_id"
   end
 
   create_table "claims", force: :cascade do |t|
@@ -83,9 +93,15 @@ ActiveRecord::Schema.define(version: 2020_05_19_210105) do
     t.string "student_id"
     t.string "avatar"
     t.integer "dorm_number"
+    t.bigint "room_id"
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
+    t.index ["room_id"], name: "index_students_on_room_id"
   end
 
+  add_foreign_key "claim_rooms", "claims"
+  add_foreign_key "claim_rooms", "rooms"
   add_foreign_key "claims", "students"
+  add_foreign_key "posts", "managers"
+  add_foreign_key "students", "rooms"
 end

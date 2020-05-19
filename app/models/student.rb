@@ -6,6 +6,7 @@ class Student < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  belongs_to :room, optional: true
   has_one :claim, dependent: :destroy
 
   after_create :create_claim

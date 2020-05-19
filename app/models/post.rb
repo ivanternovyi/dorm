@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true
 
-  belongs_to :manager
+  belongs_to :manager, foreign_key: :manager_id
 
   default_scope { order(:created_at) }
   scope :important, -> { where(important: true) }
