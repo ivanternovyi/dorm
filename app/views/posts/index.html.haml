@@ -3,3 +3,4 @@
     .home--post-item
       .post-title= post.title
       .post-body= post.body
+= will_paginate @posts, previous_label: t('common.previous'), next_label: t('common.next')
