@@ -13,8 +13,7 @@
         = link_to t('layouts.header.timeline'), posts_path
         - if current_user
           = link_to t('layouts.header.students'), students_path
-          -# TODO: add proper link
-          = link_to t('layouts.header.rooms'), notifications_path
+          = link_to t('layouts.header.rooms'), rooms_path
           - unless current_user.is_a? Student
             = link_to t('layouts.header.mailer'), notifications_path
         

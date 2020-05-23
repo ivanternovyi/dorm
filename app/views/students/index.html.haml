@@ -1,13 +1,13 @@
 - if @students.present?
-  .student-list
+  .objects-list
     - @students.each do |student|
-      = link_to student_path(student), class: 'student-list--item' do
-        .student-list--item-header
+      = link_to student_path(student), class: 'objects-list--item' do
+        .objects-list--item-header
           .-image{ style: student.avatar_url ? "background-image: url(#{student.avatar_url})" : '' }
           .-name
             .-name-item= t('students.index.first_name', name: student.first_name)
             .-name-item= t('students.index.last_name', name: student.last_name)
-        .student-list--item-footer
+        .objects-list--item-footer
           .-info-data= t('students.index.email', email: student.email)
           .-info-data= t('students.index.student_id', student_id: student.student_id)
           .-info-data= t('students.index.dorm', number: student.dorm_number)
