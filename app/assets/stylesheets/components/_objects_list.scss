@@ -19,7 +19,7 @@ $namespace: '.objects-list';
   border-radius: 4px;
   border: 1px solid $warm-grey;
   width: 320px;
-  height: 185px;
+  min-height: 185px;
 
   &:hover {
     box-shadow: 0 0 10px $light-grey;

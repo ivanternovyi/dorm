@@ -1,0 +1,14 @@
+---
+  en:
+    rooms:
+      index:
+        name: "Room name: %{name}"
+        floor: "Floor: %{floor}"
+        num_of_students: "Students living: %{num_of_students}"
+        max_tenants: "Maximum tenants: %{max_tenants}"
+        beds_count: "Number of beds: %{beds_count}"
+        balcony: "Balcony present?: %{balcony}"
+        fridge: "Fridge present?: %{fridge}"
+        microwave: "Microwave present?: %{microwave}"
+        no_rooms: No rooms found
+      show:

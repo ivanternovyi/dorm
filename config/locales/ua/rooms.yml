@@ -1,0 +1,14 @@
+---
+  ua:
+    rooms:
+      index:
+        name: "Назва кімнати: %{name}"
+        floor: "Поверх: %{floor}"
+        num_of_students: "Кількість жильців: %{num_of_students}"
+        max_tenants: "Макс. жильців : %{max_tenants}"
+        beds_count: "Спальні місця: %{beds_count}"
+        balcony: "Доступ до балкону: %{balcony}"
+        fridge: "Наявність холодильника?: %{fridge}"
+        microwave: "Наявність мікрохвильовки?: %{microwave}"
+        no_rooms: Не знайдено жодної кімнати
+      show:

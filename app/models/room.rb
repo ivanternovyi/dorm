@@ -15,4 +15,8 @@ class Room < ApplicationRecord
   ROOMS_PER_PAGE = 15.freeze
 
   self.per_page = ROOMS_PER_PAGE
+
+  def students_living_count
+    students.size
+  end
 end
