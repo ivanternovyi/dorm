@@ -10,6 +10,8 @@
         balcony: "Balcony present?: %{balcony}"
         fridge: "Fridge present?: %{fridge}"
         microwave: "Microwave present?: %{microwave}"
+        all: All
+        available_only: Available only
         no_rooms: No rooms found
       show:
         name: Room name

@@ -4,7 +4,11 @@ class RoomsController < ApplicationController
   before_action :find_room, except: %i[index new create]
 
   def index
-    @rooms = Room.page(params[:page])
+    @rooms = if params[:available_only]
+               Room.available.page(params[:page])
+             else
+               Room.page(params[:page])
+             end
   end
 
   def new

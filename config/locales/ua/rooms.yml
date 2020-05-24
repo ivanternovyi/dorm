@@ -10,6 +10,8 @@
         balcony: "Доступ до балкону: %{balcony}"
         fridge: "Наявність холодильника?: %{fridge}"
         microwave: "Наявність мікрохвильовки?: %{microwave}"
+        all: Усі
+        available_only: Лише вільні
         no_rooms: Не знайдено жодної кімнати
       show:
         name: Назва кімнати

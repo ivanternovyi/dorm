@@ -1,3 +1,8 @@
+.objects-list--filter
+  %span
+    = link_to t('rooms.index.all'), rooms_path
+  %span
+    = link_to t('rooms.index.available_only'), rooms_path(available_only: true)
 - if @rooms.present?
   .objects-list
     - @rooms.each do |room|
