@@ -1,0 +1,18 @@
+.object-form
+  = simple_form_for(room, url: url) do |f|
+    = f.error_notification
+    = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+    .form-inputs
+      = f.input :name
+      = f.input :floor
+      = f.input :max_tenants
+      = f.input :beds_count
+      .form-group
+        = f.input :balcony, as: :boolean, wrapper_html: { class: 'inline' }
+        = f.input :fridge, as: :boolean, wrapper_html: { class: 'inline' }
+        = f.input :microwave, as: :boolean, wrapper_html: { class: 'inline' }
+      = f.input :avatar, as: :file, multipart: true
+
+    .form-actions.text-center
+      = f.submit t('common.submit'), class: 'btn btn-primary'

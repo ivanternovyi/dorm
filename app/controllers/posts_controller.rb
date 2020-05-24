@@ -1,3 +1,5 @@
+# TODO: IMPORTANT add role management for actions
+
 class PostsController < ApplicationController
   before_action :find_post, except: %i[index new create]
 
@@ -32,6 +34,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
+
     redirect_back(fallback_location: root_path)
   end
 

@@ -23,8 +23,6 @@ Rails.application.routes.draw do
 
     resources :students, only: %i[index show edit update destroy]
 
-    resources :rooms, only: %i[index show]
-
     resources :managers, only: %i[show edit update destroy] do
       resources :posts, only: %i[new edit create update destroy]
     end
@@ -36,5 +34,7 @@ Rails.application.routes.draw do
     end
 
     resources :posts, only: :index
+  
+    resources :rooms
   end
 end

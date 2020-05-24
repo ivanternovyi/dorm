@@ -12,3 +12,13 @@
         microwave: "Наявність мікрохвильовки?: %{microwave}"
         no_rooms: Не знайдено жодної кімнати
       show:
+        name: Назва кімнати
+        floor: Поверх
+        num_of_students: Кількість жильців
+        max_tenants: Максимум жильців
+        beds_count: Спальні місця
+        balcony: Доступ до балкону
+        fridge: Наявність холодильника
+        microwave: Наявність мікрохвильовки
+        edit: Редагувати
+        students_living: Студенти, що проживають

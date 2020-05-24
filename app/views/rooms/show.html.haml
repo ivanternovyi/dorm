@@ -1,0 +1,58 @@
+.student
+  .student--photo-container
+    .student--photo{ style: @room.avatar_url ? "background-image: url(#{@room.avatar_url})" : '' }
+  .student--data-container
+    .student--data-info
+      .field_name= t('rooms.show.name')
+      = @room.name
+    .student--data-info
+      .field_name= t('rooms.show.floor')
+      = @room.floor
+    .student--data-info
+      .field_name= t('rooms.show.max_tenants')
+      = @room.max_tenants
+    .student--data-info
+      .field_name= t('rooms.show.num_of_students')
+      = @room.students_living_count
+    .student--data-info
+      .field_name= t('rooms.show.beds_count')
+      = @room.beds_count
+    .student--data-info
+      .field_name= t('rooms.show.balcony')
+      = @room.balcony
+    .student--data-info
+      .field_name= t('rooms.show.fridge')
+      = @room.fridge
+    .student--data-info
+      .field_name= t('rooms.show.microwave')
+      = @room.microwave
+    .student--data-info
+      = link_to t('rooms.show.edit'), edit_room_path(@room), class: 'btn btn-primary'
+
+
+- if @room.students.present?
+  .posts
+    .posts--title
+      = t('rooms.show.students_living')
+      -# TODO: add ability to add student and remove from room
+      -# = link_to "Add student", edit_room_path(@room), class: 'btn btn-primary'
+    %table.table
+      %thead
+        %tr
+          %th{ scope: 'col' } #
+          %th{ scope: 'col' }= t('activerecord.attributes.student.first_name')
+          %th{ scope: 'col' }= t('activerecord.attributes.student.last_name')
+          %th{ scope: 'col' }= t('activerecord.attributes.student.email')
+          %th{ scope: 'col' }= t('activerecord.attributes.student.student_id')
+          %th{ scope: 'col' }= t('common.actions')
+      %tbody
+        - @room.students.find_each do |student|
+          %tr
+            %td{ scope: 'row' }= student.id
+            %td{ scope: 'row' }= student.first_name
+            %td{ scope: 'row' }= student.last_name
+            %td{ scope: 'row' }
+              = link_to student.email, student_path(student)
+            %td{ scope: 'row' }= student.student_id
+            -# TODO: add ability to remove student from room
+            -# %td{ scope: 'row' }

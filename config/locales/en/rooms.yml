@@ -12,3 +12,13 @@
         microwave: "Microwave present?: %{microwave}"
         no_rooms: No rooms found
       show:
+        name: Room name
+        floor: Floor number
+        num_of_students: Students living
+        max_tenants: Maximum tenants
+        beds_count: Number of beds
+        balcony: Balcony present?
+        fridge: Fridge present?
+        microwave: Microwave present?
+        edit: Edit
+        students_living: Students living

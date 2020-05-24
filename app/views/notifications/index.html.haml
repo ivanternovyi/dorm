@@ -1,6 +1,6 @@
 %h1.text-center= t('notifications.index.notify_with_email')
 
-.student-form
+.object-form
   = simple_form_for(:notification, url: notify_notifications_path) do |f|
     .form-inputs.with-textarea
       = f.input :subject, label: t('notifications.index.subject'),
