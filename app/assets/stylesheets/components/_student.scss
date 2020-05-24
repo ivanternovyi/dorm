@@ -52,4 +52,10 @@ $namespace: '.student';
       opacity: .8;
     }
   }
+
+  &.-with-link {
+    a {
+      color: $link-color;
+    }
+  }
 }

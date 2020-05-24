@@ -17,5 +17,9 @@
     .student--data-info
       .field_name= t('students.show.dorm_number')
       = @student.dorm_number
+    - if @student.room.present?
+      .student--data-info.-with-link
+        .field_name= t('students.show.room')
+        = link_to @student.room.name, room_path(@student.room)
     .student--data-info
       = link_to t('students.show.edit'), edit_student_path(@student), class: 'btn btn-primary'
