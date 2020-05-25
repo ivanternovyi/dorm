@@ -15,6 +15,12 @@ class Student < ApplicationRecord
 
   self.per_page = STUDENTS_PER_PAGE
 
+  def claim_for_room(room_id)
+    claim_room = ClaimRoom.new(claim_id: claim.id, room_id: room_id)
+  
+    claim_room.save
+  end
+
   private
 
   def create_claim

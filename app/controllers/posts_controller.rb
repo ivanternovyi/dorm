@@ -1,7 +1,6 @@
-# TODO: IMPORTANT add role management for actions
-
 class PostsController < ApplicationController
   before_action :find_post, except: %i[index new create]
+  before_action :authenticate_manager, except: %i[index]
 
   def index
     @posts = Post.page(params[:page])

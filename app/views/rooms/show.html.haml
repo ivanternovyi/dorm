@@ -1,3 +1,6 @@
+:ruby
+  user_policy = UserPolicy.new(current_user, @room)
+
 .student
   .student--photo-container
     .student--photo{ style: @room.avatar_url ? "background-image: url(#{@room.avatar_url})" : '' }
@@ -27,7 +30,12 @@
       .field_name= t('rooms.show.microwave')
       = @room.microwave
     .student--data-info
-      = link_to t('rooms.show.edit'), edit_room_path(@room), class: 'btn btn-primary'
+      - if user_policy.show_edit_room_button
+        = link_to t('rooms.show.edit'), edit_room_path(@room), class: 'btn btn-primary'
+      - if user_policy.show_claims_button
+        = link_to t('rooms.show.room_claims'), room_claims_path(@room), class: 'btn btn-primary'
+      - if user_policy.show_claim_room_button
+        = link_to t('rooms.show.claim_room'), room_claims_path(@room), method: :post, class: 'btn btn-primary'
 
 
 - if @room.students.present?

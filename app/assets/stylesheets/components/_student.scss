@@ -53,6 +53,10 @@ $namespace: '.student';
     }
   }
 
+  a + a {
+    margin-left: floor($margin * 2 / 3);
+  }
+
   &.-with-link {
     a {
       color: $link-color;

@@ -1,7 +1,6 @@
-# TODO: IMPORTANT add role management for actions
-
 class RoomsController < ApplicationController
   before_action :find_room, except: %i[index new create]
+  before_action :authenticate_manager, except: %i[index show]
 
   def index
     @rooms = if params[:available_only]

@@ -2,3 +2,5 @@
   en:
     flash:
       successfully_sent: Successfully sent
+      claimed: Successfully claimed the room
+      already_claimed: You have already claimed the room
