@@ -35,6 +35,14 @@ Rails.application.routes.draw do
 
     resources :posts, only: :index
   
-    resources :rooms
+    resources :rooms do
+      resources :claims, only: %i[index create] do
+        member do
+          post :mark_in_progress
+          post :approve
+          post :reject
+        end
+      end
+    end
   end
 end

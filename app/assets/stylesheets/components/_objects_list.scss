@@ -25,6 +25,24 @@ $namespace: '.objects-list';
     box-shadow: 0 0 10px $light-grey;
     cursor: pointer;
   }
+
+  &.-wide {
+    align-items: center;
+    display: flex;
+    margin: floor($margin / 3) 0;
+    min-height: unset;
+    justify-content: center;
+    width: 100%;
+
+    .-status-text {
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+    }
+
+    a {
+      margin-left: $margin;
+    }
+  }
 }
 
 #{$namespace}--item-header {
@@ -79,5 +97,9 @@ $namespace: '.objects-list';
 
   span:hover {
     opacity: 0.7;
+  }
+
+  &.-bottom-spaced {
+    margin-bottom: floor($margin * 2 / 3);
   }
 }

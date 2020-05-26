@@ -1,0 +1,13 @@
+---
+  en:
+    claims:
+      index:
+        all: All
+        new: New
+        in_progress: In progress
+        approved: Approved
+        rejected: Rejected
+        mark_in_progress: Mark in_progress
+        approve: Approve
+        reject: Reject
+        no_claims: No claims...

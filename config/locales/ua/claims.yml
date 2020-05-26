@@ -1,0 +1,13 @@
+---
+  ua:
+    claims:
+      index:
+        all: Усі
+        new: Нові
+        in_progress: В розгляді
+        approved: Затверджені
+        rejected: Відхилені
+        mark_in_progress: Взяти до розгляду
+        approve: Задовільнити
+        reject: Відмовити
+        no_claims: На даний момент немає заявок...

@@ -4,7 +4,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def show_claim_room_button
-    @user.is_a?(Student)
+    @user.is_a?(Student) && @user.room != @record && @record.is_available_for_tenants?
   end
 
   def show_claims_button

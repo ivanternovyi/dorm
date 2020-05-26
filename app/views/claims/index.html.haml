@@ -1,0 +1,37 @@
+.objects-list--filter.-bottom-spaced
+  %span
+    = link_to t('claims.index.all'), room_claims_path
+  %span
+    = link_to t('claims.index.new'), room_claims_path(filter: :new)
+  %span
+    = link_to t('claims.index.in_progress'), room_claims_path(filter: :in_progress)
+  %span
+    = link_to t('claims.index.approved'), room_claims_path(filter: :approved)
+  %span
+    = link_to t('claims.index.rejected'), room_claims_path(filter: :rejected)
+
+- if @claim_rooms.present?
+  .objects-list
+    - @claim_rooms.each do |claim_room|
+      .objects-list--item.-wide
+        .-status-text= claim_room.status
+        - student = claim_room.claim.student
+        = link_to student.email, student_path(student)
+        - room = claim_room.room
+        = link_to room.name, room_path(room)
+        = link_to t('claims.index.mark_in_progress'),
+          mark_in_progress_room_claim_path(claim_room.room, claim_room.claim),
+          method: :post,
+          class: 'btn btn-primary'
+        = link_to t('claims.index.approve'),
+          approve_room_claim_path(claim_room.room, claim_room.claim),
+          method: :post,
+          class: 'btn btn-success'
+        = link_to t('claims.index.reject'),
+          reject_room_claim_path(claim_room.room, claim_room.claim),
+          method: :post,
+          class: 'btn btn-danger'
+
+  = will_paginate @claim_rooms, previous_label: t('common.previous'), next_label: t('common.next')
+- else
+  %h1= t('claims.index.no_claims')
