@@ -22,23 +22,21 @@ class ClaimsController < ApplicationController
 
   # POST (/:locale)/rooms/:room_id/claims/:id/mark_in_progress
   def mark_in_progress
-    @claim_room.update(status: 'in_progress')
+    @claim_room.mark_in_progress!
   
     redirect_to room_claims_path(@room)
   end
   
   # POST (/:locale)/rooms/:room_id/claims/:id/accept
   def approve
-    @claim_room.update(status: 'approved')
+    @claim_room.approve!
 
-    @claim_room.claim.student.update(room_id: @room.id)
-  
     redirect_to room_claims_path(@room)
   end
 
   # POST (/:locale)/rooms/:room_id/claims/:id/reject
   def reject
-    @claim_room.update(status: 'rejected')
+    @claim_room.reject!
 
     redirect_to room_claims_path(@room)
   end

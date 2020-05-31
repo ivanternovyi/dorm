@@ -5,11 +5,10 @@ class App.Modal
     $('[data-modal]').on 'click', @open
 
   open: (e) ->
-    console.log("open", e)
     e.preventDefault()
     $target = $(e.currentTarget)
     $modal = $("##{$target.data('modal')}")
-    console.log("$modal.length", $modal.length)
+
     if $modal.length
       $('body').addClass('-modal-opened')
       $modal.addClass('opened')
@@ -22,3 +21,4 @@ class App.Modal
     else
       $('.js-modal').removeClass('opened')
       $('body').removeClass('-modal-opened')
+
