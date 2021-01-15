@@ -1,0 +1,9 @@
+%h1= 'Chat room'
+
+#messages
+  = render @messages
+
+%form
+  %label= 'Say something'
+  %br
+  %input{ type: 'text', data: { behavior: 'chat_speaker' } }

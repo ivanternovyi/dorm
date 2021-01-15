@@ -62,6 +62,7 @@ $namespace: '.modal';
 #{$namespace}--header-link {
   font-size: $font-bigger-size;
   padding: floor($padding / 3) floor($padding / 2);
+  cursor: pointer;
 
   & + & {
     margin-top: floor($margin / 2);

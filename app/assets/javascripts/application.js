@@ -21,3 +21,4 @@
 //= require bootstrap-sprockets
 //= require components/upload_csv
 //= require components/search
+//= require cable

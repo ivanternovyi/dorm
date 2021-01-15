@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   authenticate :admin do
     mount Sidekiq::Web => '/sidekiq'
   end
+  
+  mount ActionCable.server => '/cable'
 
   devise_for :managers
   devise_for :admins
@@ -44,5 +46,7 @@ Rails.application.routes.draw do
         end
       end
     end
+
+    resources :chats, only: :index
   end
 end
