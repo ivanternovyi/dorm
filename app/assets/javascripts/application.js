@@ -21,4 +21,5 @@
 //= require bootstrap-sprockets
 //= require components/upload_csv
 //= require components/search
+//= require components/chat_page
 //= require cable

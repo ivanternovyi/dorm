@@ -1,0 +1,53 @@
+$namespace: '.message';
+
+#{$namespace}--headline {
+  margin-bottom: floor($margin * 2);
+}
+
+#{$namespace}--items-block {
+  // height: 75%;
+  // TODO: rethink
+  height: 600px;
+  overflow-y: auto;
+}
+
+#{$namespace}--container {
+  position: relative;
+  display: block;
+  background-color: $white;
+  border-radius: 25px;
+  text-align: center;
+  margin: 0 auto;
+  min-width: 150px;
+  width: fit-content;
+}
+
+#{$namespace}--item {
+  text-align: left;
+  padding: $padding;
+  margin-bottom: floor($margin / 2);
+}
+
+#{$namespace}--timestamp {
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+  font-size: $font-small-size;
+  font-style: italic;
+}
+
+#{$namespace}--form {
+  text-align: center;
+  margin: 0 auto;
+  width: 50%;
+
+  label {
+    padding-top: $padding;
+    font-size: $font-bigger-size;
+    font-weight: $font-weight-semi-bold;
+  }
+
+  input {
+    width: 100%;
+  }
+}

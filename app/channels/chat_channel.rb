@@ -7,7 +7,7 @@ class ChatChannel < ApplicationCable::Channel
     # Any cleanup needed when channel is unsubscribed
   end
 
-  def speak
-    ActionCable.server.broadcast 'chat_channel', message: 'Hey from backend'
+  def message(data)
+    Message.create!(content: data['content'])
   end
 end

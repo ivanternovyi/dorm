@@ -6,5 +6,6 @@ staging:
 production:
   :concurrency: 10
 :queues:
+  - action_cable
   - default
   - mailers

@@ -2,7 +2,7 @@
   = link_to root_path do
     .header--icon
   .header--title
-    = link_to "Enter Dorm",root_path
+    = link_to "Enter Dorm", root_path
     - if current_user
       .-role
         = link_to t('layouts.header.as', user_class: current_user.class), current_user_path
@@ -14,6 +14,7 @@
         - if current_user
           = link_to t('layouts.header.students'), students_path
           = link_to t('layouts.header.rooms'), rooms_path
+          = link_to t('layouts.header.chat'), chats_path
           - unless current_user.is_a? Student
             = link_to t('layouts.header.mailer'), notifications_path
         

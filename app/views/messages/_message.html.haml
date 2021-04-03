@@ -1,2 +1,3 @@
-%div.message
-  %p= message.content
+%div.message--container
+  .message--item= message.content
+  .message--timestamp= message.created_at.strftime('%k:%M, %-d %b %Y')

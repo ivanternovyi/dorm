@@ -1,5 +1,5 @@
 class ChatsController < ApplicationController
   def index
-    @messages = Message.all
+    @messages = Message.reachable
   end
 end

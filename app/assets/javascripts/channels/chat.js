@@ -8,10 +8,10 @@ App.chat = App.cable.subscriptions.create({ channel: 'ChatChannel' }, {
   },
 
   received(data) {
-    console.log(data['message'])
+    document.getElementById('messages').insertAdjacentHTML('beforeend', data['content']);
   },
 
-  speak(message) {
-    this.perform("speak", message)
+  message(content) {
+    this.perform('message', { content: content });
   }
 })

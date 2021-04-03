@@ -11,6 +11,7 @@
         sign_up: Sign up
         students: Students
         rooms: Rooms
+        chat: Chat
       footer:
         copyright: "All right reserved © %{year_now}"
       
