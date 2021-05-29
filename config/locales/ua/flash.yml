@@ -2,3 +2,5 @@
   ua:
     flash:
       successfully_sent: Успішно надіслано
+      claimed: Успішно подано заяву
+      already_claimed: Заяву вже було подано
