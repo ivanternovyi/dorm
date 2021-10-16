@@ -1,10 +1,12 @@
 AllCops:
+  TargetRubyVersion: 2.6
   NewCops: enable
   Exclude:
     - 'bin/**/*'
     - 'db/migrate/schema.rb'
     - 'db/schema.rb'
     - 'node_modules/**/*'
+    - 'vendor/bundle/**/*'
 
 Metrics/AbcSize:
   Max: 25
