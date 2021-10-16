@@ -1,0 +1,30 @@
+name: Rails - Install dependencies and run linters
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+jobs:
+  run-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install gems
+        uses: ruby/setup-ruby@473e4d8fe5dd94ee328fdfca9f8c9c7afc9dae5e
+        with:
+          bundler-cache: true
+
+      - name: Run brakeman
+        run: |
+          bin/brakeman -q -w2
+ 
+      - name: Run bundle-audit
+        run: |
+          bin/bundle-audit check --update
+
+      - name: Run rubocop
+        run: |
+          bin/rubocop --parallel
