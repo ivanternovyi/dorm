@@ -20,7 +20,7 @@ gem 'uglifier', '4.2.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '4.2.2'
 # Minimal, modern embedded V8 for Ruby.
-gem 'mini_racer', '0.2.8'
+gem 'mini_racer', '0.4.0'
 # Use Webpack to manage app-like JavaScript modules in Rails
 gem 'webpacker', '4.2.2'
 # React-Rails is a flexible tool to use React with Rails
@@ -34,7 +34,7 @@ gem 'jbuilder', '2.9.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Haml-rails provides Haml generators for Rails
-gem 'haml-rails', '1.0.0'
+gem 'haml-rails', '2.0.0'
 # The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
 gem 'bootstrap', '5.1.0'
 # Devise is a flexible authentication solution for Rails based on Warden
