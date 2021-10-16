@@ -24,12 +24,12 @@ jobs:
 
       - name: Run brakeman
         run: |
-          bin/brakeman -q -w2
+          bundle exec brakeman -q -w2
  
       - name: Run bundle-audit
         run: |
-          bin/bundle-audit check --update
+          bundle exec bundle-audit check --update
 
       - name: Run rubocop
         run: |
-          bin/rubocop --parallel
+          bundle exec rubocop --parallel
