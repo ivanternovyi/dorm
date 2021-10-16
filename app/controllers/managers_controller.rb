@@ -1,12 +1,12 @@
+# frozen_string_literal: true
+
 class ManagersController < ApplicationController
   before_action :authenticate_manager
   before_action :find_manager
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @manager.assign_attributes(manager_params)

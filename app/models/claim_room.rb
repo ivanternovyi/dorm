@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ClaimRoom < ApplicationRecord
   ALLOWED_STATUSES = %w[new in_progress approved rejected].freeze
 
@@ -12,7 +14,7 @@ class ClaimRoom < ApplicationRecord
   scope :approved, -> { where(status: 'approved') }
   scope :rejected, -> { where(status: 'rejected') }
 
-  POSTS_PER_PAGE = 15.freeze
+  POSTS_PER_PAGE = 15
 
   self.per_page = POSTS_PER_PAGE
 
@@ -30,4 +32,3 @@ class ClaimRoom < ApplicationRecord
     update(status: 'rejected')
   end
 end
-

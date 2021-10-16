@@ -12,14 +12,14 @@ class Room < ApplicationRecord
   validates :beds_count, numericality: { greater_than: 0 }, presence: true
   validates :floor, numericality: { greater_than: 0 }, presence: true
 
-  scope :available, -> {
+  scope :available, lambda {
     joins('LEFT OUTER JOIN students ON students.room_id = rooms.id')
       .group(:id, :room_id)
       .having('COUNT(students.room_id) < rooms.max_tenants')
       .order(created_at: :desc)
   }
 
-  ROOMS_PER_PAGE = 15.freeze
+  ROOMS_PER_PAGE = 15
 
   self.per_page = ROOMS_PER_PAGE
 
@@ -27,7 +27,7 @@ class Room < ApplicationRecord
     students.size
   end
 
-  def is_available_for_tenants?
+  def available_for_tenants?
     students.size < max_tenants
   end
 end

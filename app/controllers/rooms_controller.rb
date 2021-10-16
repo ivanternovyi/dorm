@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RoomsController < ApplicationController
   before_action :find_room, except: %i[index new create]
   before_action :authenticate_manager, except: %i[index show]
@@ -18,8 +20,7 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @room = Room.new(room_params)

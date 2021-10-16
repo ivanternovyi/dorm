@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   include Errorable
 
@@ -5,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
 
-  protected
+  private
 
   def authenticate_student
     authenticate_student! unless current_admin
@@ -19,7 +21,11 @@ class ApplicationController < ActionController::Base
     I18n.locale = params[:locale]
   end
 
-  def self.default_url_options(options={})
-    options.merge({ :locale => I18n.locale })
+  class << self
+    private
+
+    def default_url_options(options = {})
+      options.merge({ locale: I18n.locale })
+    end
   end
 end

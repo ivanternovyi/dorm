@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Claim < ApplicationRecord
   belongs_to :student
   has_many :claim_rooms

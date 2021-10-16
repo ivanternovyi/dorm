@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StudentsController < ApplicationController
   before_action :authenticate_student, except: :index
   before_action :find_student, except: %i[index new]
@@ -11,11 +13,10 @@ class StudentsController < ApplicationController
   end
 
   def show
-    render_422 if policy.deny_view_student?(current_admin)
+    render_unprocessable_entity if policy.deny_view_student?(current_admin)
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @student = Student.new(student_params)

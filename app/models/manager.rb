@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Manager < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -8,7 +10,7 @@ class Manager < ApplicationRecord
 
   default_scope { order(:created_at) }
 
-  MANAGER_PER_PAGE = 15.freeze
+  MANAGER_PER_PAGE = 15
 
   self.per_page = MANAGER_PER_PAGE
 end

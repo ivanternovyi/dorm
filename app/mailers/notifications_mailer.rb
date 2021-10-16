@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class NotificationsMailer < ApplicationMailer
   def notify(email, subject, body)
     @student = Student.find_by(email: email)

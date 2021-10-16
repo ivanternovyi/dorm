@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
 
@@ -19,7 +21,7 @@ gem 'uglifier', '4.2.0'
 gem 'coffee-rails', '4.2.2'
 # Minimal, modern embedded V8 for Ruby.
 gem 'mini_racer', '0.2.8'
-# Use Webpack to manage app-like JavaScript modules in Rails 
+# Use Webpack to manage app-like JavaScript modules in Rails
 gem 'webpacker', '4.2.2'
 # React-Rails is a flexible tool to use React with Rails
 gem 'react-rails', '2.6.1'
@@ -42,7 +44,7 @@ gem 'carrierwave', '2.2.2'
 # Rails forms made easy.
 gem 'simple_form', '5.0.1'
 # RMagick is an interface between the Ruby programming language and the ImageMagick image processing library
-gem "rmagick", '4.0.0'
+gem 'rmagick', '4.0.0'
 # will_paginate is a pagination library that integrates with Ruby on Rails
 gem 'will_paginate', '3.1.8'
 # Background jobs provider
@@ -59,7 +61,7 @@ group :development, :test do
   gem 'bundler-audit', '0.7.0.1'
   # Pry is a runtime developer console and IRB alternative with powerful introspection capabilities
   gem 'pry', '0.12.2'
-  # rspec-rails brings the RSpec testing framework to Ruby on Rails as a drop-in alternative to its default testing framework, Minitest.
+  # rspec-rails brings the RSpec testing framework to Ruby on Rails as a drop-in alternative to Minitest.
   gem 'rspec-rails', '4.0.2'
   # RuboCop is a Ruby static code analyzer
   gem 'rubocop', '~> 1.20'
@@ -86,4 +88,4 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', '2.0.4', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', '2.0.4', platforms: %i[mingw mswin x64_mingw jruby]

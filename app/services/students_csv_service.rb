@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'csv'
 
 class StudentsCsvService
-  PUBLIC_FOLDER = '/public'.freeze
+  PUBLIC_FOLDER = '/public'
   attr_reader :admin
 
   def initialize(admin)

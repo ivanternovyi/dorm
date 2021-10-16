@@ -1,12 +1,15 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   def current_user
     current_admin || current_student || current_manager
   end
 
   def current_user_path
-    if current_user.is_a? Admin
+    case current_user
+    when Admin
       admins_path
-    elsif current_user.is_a? Manager
+    when Manager
       manager_path(current_user)
     else
       student_path(current_user)
@@ -14,9 +17,10 @@ module ApplicationHelper
   end
 
   def destroy_user_session_path
-    if current_user.is_a? Admin
+    case current_user
+    when Admin
       destroy_admin_session_path
-    elsif current_user.is_a? Manager
+    when Manager
       destroy_manager_session_path
     else
       destroy_student_session_path
@@ -24,11 +28,11 @@ module ApplicationHelper
   end
 
   def flash_class(level)
-    case level
-    when 'notice' then "alert alert-info"
-    when 'success' then "alert alert-success"
-    when 'error' then "alert alert-error"
-    when 'alert' then "alert alert-error"
-    end
+    {
+      'notice' => 'alert alert-info',
+      'success' => 'alert alert-success',
+      'error' => 'alert alert-error',
+      'alert' => 'alert alert-error'
+    }[level]
   end
 end

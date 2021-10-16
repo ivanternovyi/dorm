@@ -7,8 +7,8 @@ class NotifyAllStudentsJob < ActiveJob::Base
     Student.select(:email).find_each do |student_email|
       NotifyStudentJob.perform_later(
         student_email,
-        notification_params[:subject],
-        notification_params[:body]
+        subject,
+        body
       )
     end
   end
