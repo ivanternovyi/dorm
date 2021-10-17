@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -6,45 +8,44 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-puts "Deleting students"
+puts 'Deleting students'
 Student.destroy_all
-puts "Done: Deleting students"
+puts 'Done: Deleting students'
 
-puts "Deleting managers"
+puts 'Deleting managers'
 Student.destroy_all
-puts "Done: Deleting managers"
+puts 'Done: Deleting managers'
 
-puts "Deleting admins"
+puts 'Deleting admins'
 Admin.destroy_all
-puts "Done: Deleting admins"
+puts 'Done: Deleting admins'
 
-puts "Adding new students"
+puts 'Adding new students'
 (1..25).to_a.each do |digit|
-  Student.create(first_name: "Denys",
-                 last_name: "Lomosko",
+  Student.create(first_name: 'Denys',
+                 last_name: 'Lomosko',
                  email: "student#{digit}@mail.com",
-                 password: "12345678",
+                 password: '12345678',
                  student_id: "BK №124662#{digit}",
                  dorm_number: (digit % 6))
 end
-puts "Done: Adding new students"
+puts 'Done: Adding new students'
 
-puts "Adding new managers"
+puts 'Adding new managers'
 (1..25).to_a.each do |digit|
   Manager.create(email: "manager#{digit}@mail.com",
-                 password: "12345678")
+                 password: '12345678')
 end
-puts "Done: Adding new managers"
+puts 'Done: Adding new managers'
 
-puts "Adding admin"
-Admin.create(email: "admin@mail.com", password: "12345678")
-puts "Done: Adding admin"
+puts 'Adding admin'
+Admin.create(email: 'admin@mail.com', password: '12345678')
+puts 'Done: Adding admin'
 
-puts "Adding posts"
+puts 'Adding posts'
 10.times do
   Post.create(
-    title: "seed posts",
+    title: 'seed posts',
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, \
            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \
            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris\
@@ -56,4 +57,4 @@ puts "Adding posts"
   )
 end
 Post.limit(3).update_all(important: true)
-puts "Done: Adding posts"
+puts 'Done: Adding posts'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ClaimsController < ApplicationController
   before_action :authenticate_student!, only: %i[create]
   before_action :authenticate_manager, only: %i[index approve reject mark_in_progress]
@@ -16,17 +18,17 @@ class ClaimsController < ApplicationController
     else
       flash[:notice] = t('flash.already_claimed')
     end
-  
-    redirect_to room_path(@room) 
+
+    redirect_to room_path(@room)
   end
 
   # POST (/:locale)/rooms/:room_id/claims/:id/mark_in_progress
   def mark_in_progress
     @claim_room.mark_in_progress!
-  
+
     redirect_to room_claims_path(@room)
   end
-  
+
   # POST (/:locale)/rooms/:room_id/claims/:id/accept
   def approve
     @claim_room.approve!

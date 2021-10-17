@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Student < ApplicationRecord
   include Filterable
 
@@ -11,13 +13,13 @@ class Student < ApplicationRecord
 
   after_create :create_claim
 
-  STUDENTS_PER_PAGE = 15.freeze
+  STUDENTS_PER_PAGE = 15
 
   self.per_page = STUDENTS_PER_PAGE
 
   def claim_for_room(room_id)
     claim_room = ClaimRoom.new(claim_id: claim.id, room_id: room_id)
-  
+
     claim_room.save
   end
 

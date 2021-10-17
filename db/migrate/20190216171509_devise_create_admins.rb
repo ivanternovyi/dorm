@@ -4,8 +4,8 @@ class DeviseCreateAdmins < ActiveRecord::Migration[5.0]
   def change
     create_table :admins do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
-      t.string :encrypted_password, null: false, default: ""
+      t.string :email,              null: false, default: ''
+      t.string :encrypted_password, null: false, default: ''
 
       ## Rememberable
       t.datetime :remember_created_at
@@ -13,6 +13,6 @@ class DeviseCreateAdmins < ActiveRecord::Migration[5.0]
       t.timestamps null: false
     end
 
-    add_index :admins, :email,                unique: true
+    add_index :admins, :email, unique: true
   end
 end

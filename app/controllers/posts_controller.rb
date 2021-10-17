@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   before_action :find_post, except: %i[index new create]
   before_action :authenticate_manager, except: %i[index]
@@ -10,8 +12,7 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @post = Post.new(post_params.merge(manager_id: params[:manager_id]))

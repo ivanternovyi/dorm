@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 class NotificationsController < ApplicationController
   before_action :authenticate_manager
 
-  def index
-  end
+  def index; end
 
   def notify
     notify_students_with_mail
