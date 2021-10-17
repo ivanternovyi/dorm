@@ -55,6 +55,7 @@ $namespace: '.header';
   display: block;
   padding: floor($padding * 2 / 3) $padding;
   border-radius: 30px;
+  cursor: pointer;
 
   &:hover {
     opacity: .8;
