@@ -25,3 +25,5 @@ yarn-debug.log*
 .yarn-integrity
 
 brakeman*
+
+/config/credentials/production.key
