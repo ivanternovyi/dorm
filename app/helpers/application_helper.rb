@@ -31,8 +31,8 @@ module ApplicationHelper
     {
       'notice' => 'alert alert-info',
       'success' => 'alert alert-success',
-      'error' => 'alert alert-error',
-      'alert' => 'alert alert-error'
+      'error' => 'alert alert-danger',
+      'warning' => 'alert alert-warning'
     }[level]
   end
 end
