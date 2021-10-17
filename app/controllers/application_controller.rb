@@ -22,8 +22,6 @@ class ApplicationController < ActionController::Base
   end
 
   class << self
-    private
-
     def default_url_options(options = {})
       options.merge({ locale: I18n.locale })
     end

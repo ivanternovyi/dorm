@@ -13,7 +13,11 @@ class StudentsController < ApplicationController
   end
 
   def show
-    render_unprocessable_entity if policy.deny_view_student?(current_admin)
+    if policy.deny_view_student?(current_admin)
+      flash[:error] = t('flash.no_access_student')
+
+      redirect_back(fallback_location: students_path)
+    end
   end
 
   def edit; end
