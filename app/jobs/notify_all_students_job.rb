@@ -4,9 +4,9 @@ class NotifyAllStudentsJob < ActiveJob::Base
   queue_as :mailers
 
   def perform(subject, body)
-    Student.select(:email).find_each do |student_email|
+    Student.select(:id, :email).find_each do |student|
       NotifyStudentJob.perform_later(
-        student_email,
+        student.email,
         subject,
         body
       )
