@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 ActionMailer::Base.smtp_settings = {
-  user_name: ENV['SENDGRID_USERNAME'],
-  password: ENV['SENDGRID_PASSWORD'],
+  user_name: 'apikey',
+  password: ENV['SENDGRID_API_KEY'],
   domain: 'enter-dorm.herokuapp.com',
   address: 'smtp.sendgrid.net',
   port: 587,
@@ -10,7 +10,7 @@ ActionMailer::Base.smtp_settings = {
   enable_starttls_auto: true
 }
 
-ActionMailer::Base.default from: 'EnterDorm <info@enterdorm.com>'
+ActionMailer::Base.default from: 'EnterDorm <enterdorm@gmail.com>'
 ActionMailer::Base.perform_deliveries = true
 ActionMailer::Base.raise_delivery_errors = true
 
