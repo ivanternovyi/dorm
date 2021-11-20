@@ -15,7 +15,7 @@ class NotificationsController < ApplicationController
   private
 
   def notify_students_with_mail
-    if notification_params[:send_to_all].present?
+    if ActiveRecord::Type::Boolean.new.cast(notification_params[:send_to_all])
       NotifyAllStudentsJob.perform_later(
         notification_params[:subject],
         notification_params[:body]
